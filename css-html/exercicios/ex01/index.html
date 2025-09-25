@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="#" method="post">
+
+        <h1>Formulário de inscrição</h1>
+        
+        <label for="iname">Nome:</label> <br>
+        <input type="text" name="Nome" id="iname" minlength="8" maxlength="30" required placeholder="Informe seu nome" autocomplete="on">
+        <br><br>
+
+        <label for="iemail">E-mail:</label> <br>
+        <input type="email" name="email" id="iemail" maxlength="20" required placeholder="Informe seu E-mail" autocomplete="on" maxlength="20">
+        <br><br>
+
+        <label for="">WhatsApp:</label> <br>
+        <input type="number" name="tel" id="itel" required placeholder="Informeu seu numero">
+        <br><br>
+
+        <label for="">Posição favorita:</label> <br>
+
+        <input type="radio" name="area" id="iarea" value="quatro">
+        <label for="iarea">De quatro</label>
+
+        <input type="radio" name="area" id="ipapai" value="papai">
+        <label for="ipapai">Papai mamãe</label>
+
+        <input type="radio" name="area" id="ilado" value="lado">
+        <label for="ilado">De lado</label>
+
+        <input type="radio" name="area" id="ipe" value="pe">
+        <label for="ipe">Em pé</label>
+        <br><br>
+
+        <label for="iob">Observações</label> <br>
+        <textarea name="ob" id="iob" cols="30" rows="4" placeholder="Fale um pouco sobre você"></textarea>
+        <br><br>
+
+        <input type="checkbox" name="check" id="icheck">
+        <label for="icheck">Desejo receber novidades e ofertas por email.</label> <br>
+
+        <button type="submit">enviar</button>
+    </form>
+</body>
+</html>
