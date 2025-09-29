@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(232, 230, 230);
+}
+
+header {
+    position: relative;
+    height: 90vh;
+}
+
+article {
+    padding: 1.5rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.85);
+
+}
+
+article > a {
+    color: orange;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+a + a {
+    padding-left: 3rem;
+}
+
+.img {
+    position: absolute;
+    height: 75vh;
+    width: 100%;
+    
+    z-index: -10;
+    object-fit: cover;
+    object-position: top;
+}
+
+.text {
+    text-align: center;
+    padding-top: 21.9vh;
+    color: white;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 100;
+}
+
+p {
+    font-size: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+button {
+    background-color: orange;
+    padding: .75rem 1.5rem;
+    border-radius: .5rem;
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+}
+
+.cardapio {
+    text-align: center;
+    margin: 1.5rem;
+    font-size: 3rem;
+}
+
+.menu__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
+    width: 50vw;
+    margin: 0 12rem;
+}
+
+
+.menu__list-img {
+    height: 19rem;
+    border-radius: .5rem .5rem 0 0;
+    
+}
+
+li {
+    height: 28rem;
+    width: 28.5rem;
+    color: white;
+    background-color: white;
+    border-radius: 0 0 .5rem .5rem;
+    margin: 1rem 0 3rem 5rem;
+    text-align: left;
+
+    box-shadow: 1px 2px 7px 0px rgba(0, 0, 0, 0.44);
+}
+
+h3 {
+    color: black;
+    padding: 1rem;
+}
+
+li > p {
+    color: black;
+    font-size: 1.25rem;
+    margin-bottom: 5rem;
+    padding: 0rem 1.25rem;
+}
+
+.sobre {
+    position: relative;
+    height: 15rem;
+    margin-top: 3rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.816));
+
+}
+
+.sobre__img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -10;
+    object-fit: cover;
+
+}
+
+.sobre__h2,
+.sobre__p {
+    text-align: center;
+    color: white;
+}
+
+.sobre__h2 {
+    font-size: 3rem;
+    padding-top: 4rem;
+}
+
+.sobre__p {
+    font-size: 1.25rem;
+}
+
+.endereco__h2 {
+    margin-top: 4.5rem;
+    text-align: center;
+}
+
+.endereco__p {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.endereco__h2 {
+    font-size: 3rem;
+}
+
+.endereco {
+    columns: 3;
+    height: 15rem;
+    width: 100%;
+    text-align: center;
+}
+
+.endereco div p {
+    width: 100%;
+    text-align: left;
+}
+
+.endereco > p {
+    font-size: 1.25rem;
+    margin-bottom: 5rem;
+    text-align: left;
+}
+
+footer > p {
+    font-size: 1.25rem;
+    background-color: rgba(0, 0, 0, 0.835);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+

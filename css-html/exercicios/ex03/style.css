@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+/* 
+
+#248030 e #ffff8c
+
+*/
+
+
+body {
+    background: url(tronco.jpg) no-repeat;
+    background-size: cover;
+}
+
+header {
+    background-color: #248030;
+    border-radius: 5px;
+    color: white;
+}
+
+main {
+    background-color: #ffff8c;
+    border-radius: 5px;
+}
+
+section a {
+    color: #248030;
+}
+
+form button {
+    background-color: #248030;
+    border-radius: 5px;
+    border: 2px solid #248030;
+}
+
+footer {
+    background-color: aliceblue;
+    border-radius: 5px;
+}

@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 600vh;
+    width: 99vw;
+    color: white;
+}
+
+.hero {                       /* PAI do VIDEO */
+    position: relative;
+    background-color: black;
+}
+
+.hero__background {           /* ESTOLOS DO VIDEO (FILHO) */
+    display: block;
+    width: 100%;
+}
+
+.hero__foreground {          /*bloco de cabecalho */
+    position: absolute;
+    width: 60rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+}
+
+.hero__title {                     /* h1 */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    margin-bottom: 1rem;
+}
+
+.hero__text {                     /* text (p) */
+    font-family: monospace;
+    font-size: 1.5rem;
+}
+
+.section {                   /* estilo para as seccoes */
+    display: inline-block;              
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.section__title {        /* estilos para os h2 */
+    margin: 4rem auto;
+}
+
+.section__img {             /* estilos da IMAGEM da foca */
+    height: 30rem;
+    width: 80rem;
+    border-radius: 1rem;
+    box-shadow: 1rem 2rem -0.5rem rgba(20, 116, 180, 0.25);
+    object-fit: cover;
+    object-position: top;
+}
+
+.section__text {            /* estilos para os paragrafos */
+    padding: 5rem;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.section__img-inline {          /* estilo da IMAGEM2 da foca */
+    display: block;
+    float: left;
+    width: 20rem;
+    border-radius: 4rem .5rem;
+    margin-left: 5rem;
+    box-shadow: 1rem 2rem -0.5rem rgba(20, 116, 180, 0.25);
+    
+}
+
+.section__text-inline {         /* estilo da div pai dos paragrafos */
+    width: 60rem;
+    margin: 0rem 5rem;
+    float: right;
+    padding-top: 5rem;
+}
+
+.section__text-inline > p {         /* estilos da div filho */
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.gallery {                  /* varias imagens */
+    width: 90rem;
+    display: inline-block;
+
+}
+
+.gallery__img {         /* estilos DIRETO nas IMAGENS */
+    height: 17rem;
+    width: 17rem;
+    border-radius: 1rem;
+
+}
+
+footer {    
+    height: 10rem;
+    padding-top: 7rem;
+    text-align: center;
+    background-color: black;
+}
+
+a {
+    color: rgb(43, 139, 255);
+}

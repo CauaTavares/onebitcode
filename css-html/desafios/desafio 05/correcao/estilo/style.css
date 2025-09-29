@@ -1,0 +1,210 @@
+@charset "UTF-8";
+
+/* 
+
+CORRECAO o que falta fazer pro SITE ficar certo!
+
+SEMPRE FAZER: 
+
+*/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+  --color-White:
+  --color-background:
+}
+
+/* SEMPRE COMEÇAR PELOS GERAIS - (como saber quais sao os gerais) */
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-white);
+}
+
+a {
+    color: var(--color-blue);
+}
+
+.hero {    /* ASSIM QUE DEIXA UM H1(etc) NA FRENTE DE VIDEO/IMAGEM */
+
+    background: linear-gradient(rgba(0, 0, 0, 0.1), var(--color-background));   /* desgrace se faz com background puro */
+
+    /* 1 - COMECAR COM (RELATIVE) NO PAI*/
+
+    position: relative; 
+    /*APLICAR SEMPRE NO PAI - no html tudo fica um de baixo do outro POSITION RELATIVE serve para tirar isso e deixar um em cima do outro
+    */
+
+    min-height: 100vh; /* isso serve para que se o dispositivo for grande o texto vai crescer mas se for pequeno nao vai dimunir disso facil ne?
+    nao é facil
+    */
+}
+
+.hero__background {    /* 2 - (ABSOLUTE) NO FILHO*/
+    
+    position: absolute; /* isso permite que posicionamos ele de forma manual  */
+
+    /* 4 (POSICIONAR MANUAL) */
+    top: 0; /* maneira manual de posicionar o elemento que deixei absoluto. quero que fica no topo da pagina por isso (top == 0)*/
+
+    object-fit: cover; /* essa propriedade é para saber como o objeto vai caber/encaixar*/   
+
+    height: 100vh;
+    width: 100%;
+    
+    /* 3 (JOGA O TEXTO PARA CIMA DO VIDEO/IMAGEM) */
+    z-index: -10; /* controla a profundidade de um elemento se está para trás jogamos para frente com negativo*/
+}
+
+.hero__foreground {
+    color: var(--color-white);
+
+    padding-top: 40vh;  /* nesse caso foi usado vh pois o PAI esta com vh e é mais facil calcular mas somente nesse caso os resto do site nao */
+                        /* EXISTEM FORMAS MELHORES DE CENTRALIZAR O TEXTO MAS NO EXEMPLO USAMOS ESSA*/
+
+    text-align: center;
+}
+
+.hero__title {
+    font-size: 5rem; /* SEMPRE USAR (REM) {AUMENTAR O TAMANHO DO TEXTO}*/
+
+    font-weight: 300; /* Serve para aumentar a GROSSURA do texto*/
+}
+
+.hero__text {
+    margin-top: 2rem;   
+    letter-spacing: .5rem;  /*Serve para aumentar o espacamento das letras*/
+
+    text-transform: uppercase; /* Serve para transformar o texto em maiusculas */
+}
+
+.section {
+    overflow: hidden; /* para controlar a forma de transbordamento do elemento exemplo: uma imagem transborda o pai 
+
+    (Se usa o HIDDEN para esconder as barras de rolagem que aparecem)
+
+    (Se tiver um conteudo que ultrapassa os 99vw coloque o OVERFLOW: SCROLL)
+
+    (Nesse caso foi usado para empurrar o titulo para baixo pois ele calcula o tamanho da sessão)
+    */
+
+    padding: 0 8rem; /* NESSE CASO deu os espacamento para ficar com estilo papel e nao esticada pegando a tela toda */
+
+    text-align: center;
+}
+
+.section__title {
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 4rem auto; /* AUTO serve para centralizar o texto*/
+}
+
+.section__img,
+.section__img-inline {
+    border-radius: .75rem;
+    box-shadow: 0 1rem 2rem -0.5rem rgba(20, 116, 116, 0.25);
+
+    object-fit: cover; /* Serve para quando mexer na altura da imagem ela ainda fica cobrindo toda a area possivel 
+    EXEMPLO: definindo altura/largura ela fica toda amassada */
+
+    object-position: top; /* Serve para posionar a imagem seja no top, bottom, left, right*/
+
+    position: relative; 
+
+    max-height: 30rem; /* Define a autura maxima para elas nao crescerem demais */
+
+    width: 100%;    /* Normalmente a imagem ultrapassa o tamanho do pai so de dar 100% DIRETO na IMAGEM ela vai oculpar 100% do tamanho do pai sendo assim nao ultrapassando o pai e quebrando a     tela
+    
+    (NÃO PRECISA DAR TAMANHO AO PAI ELE JA TEM PROGRAMADO) */
+}
+
+.section__text,
+.section__text-inline {
+    font-size: 1.25rem; /* tamanho da fonte*/
+
+    line-height: 1.75; /* altura da linha */
+
+    margin: 4rem auto; /* margim para centralizar */
+}
+
+.section__img-inline {
+    border-radius: 4rem .5rem;
+
+    float: left; /* FLOAT serve para o elemento flutuar sendo assim definir se fica na direita ou na esqueda 
+    (DEFINIR UMA ALTURA/LARGURA PARA VISUALIZAR)
+    (NÃO É MAIS MUITO USADO)*/
+
+    margin-right: 4rem; /* definil uma margin para ela descolar dos textos */
+    margin-bottom: 2rem;
+    height: 25rem;  /* define a altura e a largura da imagem */
+    width: 20rem;
+}
+
+.section__text-inline {
+    margin-top: 6rem;
+    text-align: left;
+}
+
+.section__text-inline > p {
+    margin-top: 1.5rem;
+}
+
+#hangouts img {
+    object-position: center; /* serve para posicionar onde mostrar da imagem */
+}
+
+.gallery__img {
+    border-radius: .75rem;
+    height: 16rem;
+    width: 16rem;
+
+    object-fit: cover; /* Serve para arrumar a imagem para nao ficar amassada */
+
+    /* DEG == DEGREES (graus)*/
+    transform: rotate(-2deg);   /* Serve para rodas o elemento */
+}
+
+.gallery__img-wrapper {
+    display: inline-block;  /* usa as propriedades do inline mas deixando em block */
+
+    position: relative;
+}
+
+.gallery__img-wrapper + .gallery__img-wrapper {
+    margin-left: 3rem;
+    margin-top: 3rem;
+}
+
+.gallery__img-wrapper:nth-child(even) > .gallery__img {
+
+    top: 1rem; /* serve para quando se que dar uma distancia mas o proprio elemento precisa ser relativo e inline-block */
+
+    transform: rotate(2deg); /* rodas para o outro lado */
+}
+
+.gallery__img-wrapper::after {      /* pseudo elemento */
+    content: "";
+    background-color: #a52a2a;
+    border-radius: 50%;
+    display: block;
+    height: 1.25rem;
+    width: 1.25rem;
+    position: absolute;
+    top: 0.25rem;
+    right: 1rem;
+}
+
+.gallery__img-wrapper:nth-child(even)::after {
+    left: 1rem;
+}
+
+footer {
+    margin-top: 4rem;
+    padding: 2rem;
+    text-align: center;
+}

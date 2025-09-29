@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box; 
+  /* muda a forma que que é calculado a largura/altura dos elementos 
+  EX: elemento 1 tem padding elemento
+  2 tambem tem padding 
+  sem esse elemento eles vao ficar um padding em cima do outro */
+  margin: 0;
+  padding: 0;
+}
+ 
+:root {               /* Ideias de nomes para colocar nas variaveis */
+  --color-primary: #ffa500; 
+  --color-dark: #232323;
+  --color-light: #e0e0e0;
+  --color-white: #fff;
+}
+
+html {    /* esse elemento suavisa(smooth) o scroll ate a sessao quando o usuario clica no link */
+  scroll-behavior: smooth;
+}
+
+body {  
+  background-color: var(--color-light);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+header {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding: 1.5rem 0;
+}
+
+nav ul {
+  list-style: none;       /* Tira as bolinhas das listas */
+  text-align: center;
+}
+
+nav li {
+  display: inline;          /* coloca os elementos em linha */
+  margin: 0 1.5rem;
+}
+
+nav a {
+  text-decoration: none;      /* Tira o sublinhado dos links */
+  font-weight: 700;           /* Mexe na grossura da letra */
+}
+
+.hero {
+  background-image: url("img/pexels-narda-yescas-1566837.jpg");
+
+  background-size: cover;       /* preenche toda a area da imagem nao deixando ela destorcer*/
+
+  color: var(--color-white);
+  min-height: 75vh;     /* ela vai crescer mas nao vai diminuir de disso */
+  padding: 10rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 4rem;      /* aumenta o tamanho da fonte */
+  font-weight: 100;      /* aumenta a grossura da fonte */
+}
+
+.hero p {
+  font-size: 1.5rem;    /* aumenta o tamanho da fonte */
+  margin-top: 1.5rem;
+}
+
+.cta-button {
+  background-color: var(--color-primary);
+  border-radius: .5rem;                       /* deixar em ordem alfabetica */
+  color: var(--color-dark);
+
+  display: inline-block;        /* Evita que transborte para cima de outros elementos, sem essa propriedade nao tem como dar padding-top*/
+  
+  font-size: 1.25rem;                     /* Tamanho da fonte */
+  font-weight: 700;                      /* Mexe na grossura da fonte */
+  margin-top: 1.5rem;
+  padding: .75rem 1.5rem;
+  text-decoration: none;                 /* tira o sublinhado do buttom/links */
+} 
+
+/* seleciona todas as SECTIONS que NÃO sao a #HOME*/
+section:not(#home) {  
+       /* seletor que aplica a propriedade em todos os elementos menos no que voce colocar */
+
+  padding: 4rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 3rem;        /* Tamanho da fonte */
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: 1.25rem;     /* tamanho da fonte */
+}
+
+.menu-list {
+  list-style: none;       /* tira o estilo da lista (BOLINHAS) */
+}
+
+.menu-list > li {
+  background-color: var(--color-white);
+  border-radius: .5rem;
+  box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.5);
+
+  display: inline-block; /* foi usado inline-block para poder manipular a margem*/
+
+  margin: 1.5rem;
+  height: 28rem;
+  width: 28rem;
+  text-align: left;
+}
+
+.menu-list img {
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+  object-fit: cover;        /* preencher o espaco por um todo sem amassar*/
+
+  width: 100%;        /* essa imagem nao pode passar de 100% do pai */
+}
+
+.menu-list h3,
+.menu-list p {
+  padding: 1rem 1.25rem 0;
+}
+
+#about {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+    ),
+    url("img/pexels-eneida-nieves-905847.jpg");
+  background-size: cover;     /* peenche todo o espaco para nao amassar a iamgem */
+
+  background-position: center; /* Posiciona a imagem */
+
+  color: var(--color-white);
+}
+
+address {
+  margin: 2rem 0;
+  font-style: italic;
+}
+
+address > * {
+  display: inline-block;  /* inline-block é para eles ficar tudo na mesma linha*/
+  margin: 1.5rem;
+  text-align: left;
+}
+
+footer {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding: 2rem;
+  text-align: center;
+}
