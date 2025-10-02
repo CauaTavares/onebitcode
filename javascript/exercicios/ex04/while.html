@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio de while</title>
+</head>
+<body>
+    <h1>Estou me tornando capaz</h1>
+
+    <script src="while.js">
+        const nome = prompt("Informe seu nome:")
+        let cidades = ""
+        let contagem = 0
+        
+        let visita = prompt("Já visitou alguma cidade? (sim/nao)")
+        
+        while (visita === "sim") {
+              
+            let cidade = prompt("Informe o nome da cidade: ")
+            cidades += " - " + cidade + "\n"
+            contagem++
+            visita = prompt("Já visitou outra?")              
+        }
+
+        alert(
+            "Turista: " + nome +
+            "\nQuantidade de cidades visitadas: " + contagem +
+            "\nCidades visitadas:\n" + cidades
+        )
+    </script>
+</body>
+</html>

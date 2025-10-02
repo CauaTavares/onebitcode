@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estou tentando aprender FOR</title>
+</head>
+<body>
+   <script>
+
+    //Peça uma palavra ao usuário e guarde em original.
+    // Crie uma variável invertida começando vazia.
+    // Use um for que começa no fim da palavra e vai até o começo.
+    // A cada volta do for, pegue a letra da posição atual (original[i]) e junte em invertida.
+    // Quando o for terminar, compare original com invertida.
+    // Se forem iguais, mostre no alert que é um palíndromo.
+    // Se forem diferentes, mostre no alert que não é, junto com a palavra original e a invertida.
+
+    // O for começa no último índice da palavra (length - 1), vai até o primeiro índice (0), e a cada volta diminui i (i--), colando a letra atual no final da string invertida.
+
+    let palavra = prompt("Informe uma palavra: ")
+    let invertida = ""
+
+    for(let i = palavra.length - 1; i >= 0; i--) {
+
+        invertida += palavra[i]
+    }
+
+    if (palavra === invertida) {
+        alert("A palavra é um Palíndromo!")
+    } else {
+        alert("A palavra não é um palíndromo " + palavra + " " + invertida)
+    }
+
+   </script> 
+</body>
+</html>

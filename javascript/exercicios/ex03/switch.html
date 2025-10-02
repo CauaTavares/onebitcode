@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Eu estou tentando</title>
+</head>
+<body>
+    <h1>Estou me tornando capaz</h1>
+ 
+    <script src="switch.js">
+        let valor = prompt("informe a medida em metros para ser convertida:")
+        let valor1 = parseFloat(valor)
+
+        const medidas = prompt("Informe qual medida quer converter \na)mm \nb)cm \nc)dm \nd)dam \ne)hm \nf)km ")
+
+        switch (medidas) {
+            case "a":
+                alert("O resultado é: " + valor * 1000 + "MM")
+                break
+            case "b":
+                alert("O resultado é: " + valor * 100 + "CM")
+                break
+            case "c":
+                alert("O resultado é: " + valor * 10 + "DM")
+                break
+            case "d":
+                alert("O resultado é: " + valor / 10 + "DAM")
+                break
+            case "e":    
+                alert("O resultado é " + valor / 100 + "HM")
+                break
+            case "f":    
+            alert("O resultado é " + valor / 1000 + "KM")
+                break
+            default:
+                alert("Opção inválida...")
+                break
+        }
+        
+    </script>
+</body>
+</html>

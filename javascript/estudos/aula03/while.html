@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo WHILE</title>
+</head>
+<body>
+    <h1>APRENDENDO WHILE EU CONSIGO!</h1>
+
+    <script>
+        let velocidade = 80 
+
+        while (velocidade < 0) {
+            alert("O carro está a " + velocidade + " KM/H")
+            velocidade -= 20
+            alert("Diminuindo 20 km/h")
+
+            if (velocidade === 40) {
+                break
+            }
+        }
+
+        alert("O carro parou.")
+    </script>
+</body>
+</html>

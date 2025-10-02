@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estou me tornando capaz</title>
+</head>
+<body>
+    <h1>DO WHILE</h1>
+
+    <script src="doWhileB.js">
+
+        // O que eu entendi desse exercicio: 
+
+        // Usar mais o SHITCH, para adicionar um valor a mais em uma variavel é so adicionar (+=) com parseFloat dentro de um laço de repetição(WHILE/DOWHILE) que ela continuara adicionando quanto ele quiser
+
+        let dinheiro = parseFloat(prompt("Quanto de dinheiro o senhor possui?"))
+        let pergunta = ""
+
+        do {
+            pergunta = prompt("Dinheiro disponivel: " + dinheiro + "\n1) Adicionar \n2) Remover \n3 Encerrar")
+
+            switch (pergunta) {
+                case "1":
+                    dinheiro += parseFloat(prompt("Indique quanto quer adicionar:"))
+                    break
+                case "2":
+                    dinheiro -= parseFloat(prompt("Indique o valor para remover:"))
+                    break
+                case "3":
+                    alert("Encerrando...")
+                    break
+                default:
+                    alert("Opção inválida...")
+                    break
+            }
+
+        } while (pergunta < 3)
+
+    </script>
+</body>
+</html>

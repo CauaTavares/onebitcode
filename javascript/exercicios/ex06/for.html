@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOR, EU ESTOU ME TORNADO CAPAZ</title>
+</head>
+<body>
+    <script>     
+
+        //Peça ao usuário que digite um número e guarde na variável numero.
+        // Crie uma variável chamada resultados, começando vazia.
+        // Faça um for que comece em 1 e vá até 20.
+        // A cada volta do for:
+        // Multiplique o numero pelo valor atual do for.
+        // Formate a linha da multiplicação, por exemplo: "3 x 5 = 15".
+        // Acrescente essa linha na variável resultados, adicionando uma quebra de linha (\n) para separar cada linha.
+        // Quando o for terminar, mostre todo o conteúdo da variável resultados (usando alert ou console.log).
+        // O programa termina.
+
+        // Calcula o resultado da multiplicação numero * i.
+        // Monta uma linha de texto mostrando a multiplicação e acumula na string resultados, separando cada linha com \n.
+
+        const numero = parseFloat(prompt("Informe um número entre 1 e 20"))
+        let soma = ""
+
+        for (let i = 0; i <= 20; i++) {
+            // soma = i * numero
+            // soma = alert(i + " X " + numero + " = " + soma)
+            soma += numero + " x " + i + " = " + (numero * i) + "\n";
+        }
+
+        alert(soma);
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do While</title>
+</head>
+<body>
+    <h1>Estou tentando</h1>
+
+    <script src="DoWhile.js">
+
+        // O que entendi desse ex:
+        // usar mais o SWITCH, da para usar uma variavel com um valor fixo (EX: a variavel ja tem o valor de 5 qualquer numero diferente(!==) desse o programa cai no default (opcao invalida) e continua ate o usuario escolher o numero 5)
+
+        let programa = ""
+        let escola = ""
+
+        do {
+            programa = parseFloat(prompt("Escolha uma opção: \n1)\n2)\n3)\n4)\n5) Encerrar"))
+
+            escola = alert("Você escolheu a opção: " + programa)
+
+        } while (programa < 5) {
+            escola = alert("fim do programa.... ")
+        }
+    </script>
+</body>
+</html>
