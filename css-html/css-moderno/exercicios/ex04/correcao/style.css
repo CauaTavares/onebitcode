@@ -1,0 +1,209 @@
+* {
+  box-sizing: border-box; /*Cada navegador tem suas medidas padrão isso é para removelas*/
+
+  margin: 0;
+  padding: 0;
+}
+
+:root {                  /* Ideias de nomes para :ROOT */
+  --color-primary: #4c6daf;
+  --color-light: #e0e0e0;
+  --color-white: #ffffff;
+  --color-dark: #2c2c2d;
+  --color-dark-hover: #404042;
+  --color-grey-700: #444444;
+  --color-grey-500: #777777;
+  --color-grey-300: #cccccc;
+
+          /* :ROOT de medidas */
+  --border-radius-sm: 0.25rem;
+  --box-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.2);
+  --padding-sm: 1rem;
+}
+            /*1--> COMEÇAR SEMPRE PELO (DISPLAY GRID NA TAG PAI DE TODOS) */
+body {                                     
+  background-color: var(--color-light);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;    /* Garante que vai ocupar 100% da tela */ 
+
+  display: grid;
+  grid-template-columns: 16rem 1fr; /* Usar uma fr*/
+  grid-template-rows: 4rem 1fr  3rem;   /* FRAÇÃO é USADA para crescer INDEFINIDAMENTE */
+
+  grid-template-areas: /*Forma mais vizual*/
+    "header  header"
+    "sidebar content"
+    "sidebar footer";
+}
+
+header {
+  grid-area: header;    /*2--> Ir dando os nomes em cada um*/
+
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 1.5rem;        /* Tamanho da fonte */
+  padding: 0 1rem;  /* Preenchimento (DANDO PADDING) não precisa definir altura*/
+
+  /* ------------(COMO CENTRALIZAR NA [VERTICAL/HORIZONTAL])-------------- */
+
+  display: grid;   /* COMECAR SEMPRE com display: flex/grid */
+
+  align-content: center;    /* Garante que vai ficar sempre centralizado */
+  /* Mexe no eixo VERTICAL */
+}
+
+.sidebar {
+  grid-area: sidebar;   /*2--> Ir dando os nomes em cada um*/
+
+  background-color: var(--color-dark);
+  padding: 1rem 0;  /* Preenchimento */
+}
+
+.sidebar ul {
+  list-style: none; /* Tira as bolinhas dos links */
+}
+
+.sidebar a {  /* Pode pegar a tag (link) direto junto com a class pai (sidebar) */
+
+  color: var(--color-white);
+  display: block;     /* precisa do display para dar o padding */
+  padding: 1rem 2rem;
+  text-decoration: none; /* Tira a linha o sublinhado do link */
+}
+
+/* ------------ (EFEITO IMPORTANTE)---------------*/
+.sidebar a:hover {  /* EFEITO DISCRETO QUANDO PASSA O MOUSE POR CIMA */
+  background-color: var(--color-dark-hover);
+}
+
+.content {
+  grid-area: content;   /*2--> Ir dando os nomes em cada um*/
+
+  display: grid;    /* COMEÇAR SEMPRE PELO DISPLAY: GRID */
+
+  align-content: start; /*  */
+
+  gap: 2rem;    /* Serve para dar distancia entre os conteúdos */
+
+  padding: 2rem;    /* Preenchimento (distanciamento interno)*/
+}   
+
+.stats-section {
+  display: grid;    /* SEMPRE COMEÇAR PELO DISPLAY: */
+
+  align-items: start;   /* Alinha os item no começo (EIXO: VERTICAL)*/
+
+  justify-items: start; /* Alinha os itens no começo (EIXO: HORIZONTAL)*/ 
+
+  /* Ocupa o minímo de tamanho para ocupar o máximo de conteúdo*/
+  grid-template-columns: repeat(4, max-content); 
+   /* TAMANHO NECESSÁRIO PARA CABER O MÁXIMO DO CONTEÚDO (NESSE CASO O TEXTO)*/
+
+  gap: 2rem; /* Espaçamento */
+}
+
+.card,
+.chart-section,
+.table-section {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-sm);   
+  box-shadow: var(--box-shadow-sm);
+  padding: var(--padding-sm);
+}
+
+.card {
+  text-align: center; /* Alinha os textos no centro */
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+.card p {
+  color: var(--color-grey-700);
+  font-size: 1.5rem;  /* Aumenta o tamanho da fonte */
+  font-weight: 700; /* Aumenta a grossura da fonte */
+}
+
+.chart-section h2,
+.table-section h2 {
+  margin-bottom: 1rem;  /* Margem na parte de baixo */
+} 
+
+.chart-placeholder {
+  background-color: var(--color-grey-300);  /* Dando a cor direto no pai não precisa dar individualmente em cada um*/
+
+  color: var(--color-grey-500);
+
+  display: grid;  /* Se for centralizar usar o display: grid/flex */
+
+  height: 12rem;  /* Altura das caixas */
+
+  place-content: center;   /* CENTRALIZA NA HORIZONTAL E VERTICAL */
+}
+
+.charts {
+  display: grid;  /* Sempre que for usar (GAP) usar DISPLAY: GRID/FLEX */
+
+  gap: var(--padding-sm);   /* Aplica o mesmo espaçamento por fora e por dentro (Sendo assim não precisa dar margem nos cantos) */
+
+  grid-template-areas:  /* Jeito mais vizual */
+    "chart1 chart2 chart3"
+    "chart4 chart4 chart4";
+}
+
+#chart1 {
+  grid-area: chart1;
+}
+
+#chart2 {
+  grid-area: chart2;
+}
+
+#chart3 {
+  grid-area: chart3;
+}
+
+#chart4 {
+  grid-area: chart4;
+}
+
+table {
+  border-collapse: collapse;  /* Serve para sumir com uns espaços entre as divs */
+  width: 100%;  
+}
+
+table th,
+table td {
+  /* ---------------(ESTILOS DE LINHA)--------------------*/
+  border-bottom: 1px solid var(--color-grey-300); /* USAR ESSA PROPRIEDA PARA FAZER UMA LINHA EM BAIXO */
+
+  padding: var(--padding-sm);
+}
+
+table th {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+
+  text-align: left;  /* Alinha os itens a ESQUERDA */
+}
+
+/*---------------(Efeito IMPORTANTE)------------------*/
+table tr:hover { /* EFEITO DISCRETO QUANDO PASSA O MOUSE POR CIMA */
+  background-color: var(--color-light);
+}
+
+footer {
+  grid-area: footer;    /* 2--> Ir dando os nomes em cada um */
+
+  background-color: var(--color-primary);
+  color: var(--color-white);
+
+  /* ------------------- (COMO CENTRALIZAR FOOTER(TAG P)) ---------------------*/
+
+  display: grid;   /* SEMPRE COMEÇAR COM DISPLAY GRID: */
+
+  /* Abreviação de (align-content) e (justify-content) */
+  place-content: center;    /* CENTRALIZA NA HORIZONTAL E VERTICAL */
+}

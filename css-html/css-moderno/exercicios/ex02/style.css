@@ -1,0 +1,28 @@
+                        /* >>>VERSÃO DO PROFESSOR<<< */
+
+
+body {
+  background-color: #232323;
+  color: #fff;
+  font-family: sans-serif;
+  padding: 1rem 2rem;
+}
+                    /* PASSO 1 (DISPLAY: FLEX) no PAI */   
+.galery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .125rem; /* 2px */
+}
+
+.galery > img {    
+  flex-grow: 1;         /* Serve para crescer as imagens assim elas crescem na mesma proporção */
+
+  flex-shrink: 1;       /* Serve para encolher */
+
+  flex-basis: 12rem;    /* Controla a proporção(altura/largura), tamanho na imagem */
+
+  height: 12rem;    /* ALTURA */          
+  width: 12rem;     /* LARGURA */
+
+  object-fit: cover;    /* Evita que amasse as imagens */
+}

@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;   /*Cada navegador tem suas medidas padrão isso é para removelas*/
+
+  margin: 0;
+  padding: 0;
+}
+
+body {          /*----------------(IMPORTANT)----------------*/
+  background-color: #2c2c2d;
+  color: #fff;                  /* Dar COLOR no BODY e não em cada ITEM */
+
+  font-family: Arial, Helvetica, sans-serif;  /* Dar o FAMILY no BODY e NÃO em NO seletor geral */
+}
+
+header {
+  background-color: #3f3f41;
+  padding: 1rem;    /* Preenchimento */
+}
+
+.navbar {
+  display: flex;        /* Deixa tudo na HORIZONTAL*/
+
+  flex-direction: column;   /* Muda para VERTICAL*/
+
+  align-items: start;       /* FORÇA os itens a ficarem na ESQUERDA */
+
+  gap: 1rem; /* ESPAÇAMENTO ENTRE ITENS (PRECISA DAR DISPLAY: FLEX/GRID ANTES) */
+}
+
+.logo {
+  font-size: 1.5rem;    /* tamanho da fonte */
+}
+
+.menu {
+  list-style: none;     /* Tira os estilo da lista (as bolinhas) */
+
+  display: flex;           /* Muda os itens na HORIZONTAL */
+
+  flex-direction: column;   /* Muda para a VERTICAL */
+
+  gap: 1.5rem;  /* Espaçamento entre os itens */
+}
+
+.menu a {
+  color: #fff;
+  font-weight: 700;         /* Grossura da fonte */
+  text-decoration: none;    /* tira o sublinhado do link */
+}
+
+main {
+  padding: 1rem;    /* Preenchimento */
+}
+
+h1 {
+  font-size: 1.75rem;   /* Preenchimento */
+
+  margin-bottom: 1rem;  /* Margim na parte de baixo do h1 */
+}
+
+p {
+  line-height: 1.6; /* Mexe no espaçamento da fonte (o espaço entre elas) */
+}
+
+@media screen and (min-width: 769px) {
+  header,
+  main {
+    padding: 1.5rem 8rem;
+  }
+
+  .navbar {
+    flex-direction: row;  /* Deixa os elementos na HORIZONTAL (em linha) */
+
+    align-items: center;   /* Centraliza no centro no EIXO (VERTICAL) */
+
+    justify-content: space-between;  /* Modifica na HORIZONTAL*/
+  }
+
+  .menu {
+    flex-direction: row;  /* Deixa os elementos na HORIZONTAL (em linha) */
+  }
+
+  h1 {
+    font-size: 2.5rem;      /* Mexe no tamanho do texto */
+    margin-bottom: 2rem;    /* Adiciona uma margem em baixo */
+  }
+
+  p {
+    font-size: 1.25rem; /* Mexe no tamanho do texto */
+  }
+}

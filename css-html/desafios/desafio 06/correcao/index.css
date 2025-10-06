@@ -72,16 +72,16 @@ nav a {
 
 .cta-button {
   background-color: var(--color-primary);
-  border-radius: .5rem;                       /* deixar em ordem alfabetica */
+  border-radius: .5rem;  /* deixar o codigo em ordem alfabetica */
   color: var(--color-dark);
 
   display: inline-block;        /* Evita que transborte para cima de outros elementos, sem essa propriedade nao tem como dar padding-top*/
   
-  font-size: 1.25rem;                     /* Tamanho da fonte */
-  font-weight: 700;                      /* Mexe na grossura da fonte */
+  font-size: 1.25rem;        /* Tamanho da fonte */
+  font-weight: 700;        /* Mexe na grossura da fonte */
   margin-top: 1.5rem;
   padding: .75rem 1.5rem;
-  text-decoration: none;                 /* tira o sublinhado do buttom/links */
+  text-decoration: none;  /* tira o sublinhado do buttom/links */
 } 
 
 /* seleciona todas as SECTIONS que NÃO sao a #HOME*/
@@ -121,9 +121,9 @@ p {
 .menu-list img {
   border-top-left-radius: .5rem;
   border-top-right-radius: .5rem;
-  object-fit: cover;        /* preencher o espaco por um todo sem amassar*/
+  object-fit: cover;  /* preencher o espaco por um todo sem amassar*/
 
-  width: 100%;        /* essa imagem nao pode passar de 100% do pai */
+  width: 100%;    /* essa imagem nao pode passar de 100% do pai */
 }
 
 .menu-list h3,

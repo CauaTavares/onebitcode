@@ -1,0 +1,70 @@
+body {
+  background-color: #2c2c2d;
+  color: #fff;
+  font-family: Arial, sans-serif;
+
+  display: grid;      /* Como alinhar conteúdo na (VERTICAL/HORIZONTAL) */
+
+  /* 1 --> align-items: center;       (VERTICAL)     Alinha o conteudo em linhas deixando um espaço entre eles */
+
+  /* 2 --> justify-content: center;    (HORIZONTAL)   Alinha como um todo o conteúdo espremendo no meio */ 
+
+  place-content: start center;  /* Serve para alinhar na horizontal */
+  
+  min-height: 97vh;
+
+  /* justify-self: end; serve para posicionar os filhos  */
+}
+
+.grid-container {               /* ESTILIZAÇÃO das DIVS dentro da SESSÃO */
+  background-color: #1c1a1d;
+  padding: 1rem;
+  height: 26rem;
+  width: 90vw;
+  gap: 1rem;
+
+  display: grid;                   /* 1. Começar com GRID */
+  grid-template-columns: repeat(3, 1fr);   /* Tamanho das caixas na (VERTICAL) */
+  
+  grid-template-rows: 8rem 8rem 8rem; /* Tamanho das caixas na (HORIZONTAL) */
+
+ /* -------------------(POSICIONAMENTO DO PAI)-------------------------- */
+
+  /* (CONTENT) POSICIONA A CAIXA COMO UM TODO (PAI)*/
+  
+  /* align-content: start; (ALIGN = EIXO VERTICAL) (CONTENT = CONTEÚDO COMO UM TODO) */
+
+  /* justify-content: center; (JUSTIFY = EIXO HORIZONTAL) POSICIONA O PAI NA HORIZONTAL) juntamente com os filhos */
+
+
+  /* -------------------(POSICIONAMENTO DOS FILHOS)-------------------- */
+
+  /* (ITEMS) POSICIONA OS FILHOS NA (VERTICAL/HORIZONTAL)*/
+
+  /* align-items: end;      ALINHA OS FILHOS NO (EIXO = VERTICAL) */
+  
+
+  /* justify-items: end;     ALINHA OS FILHOS NO (EIXO = HORIZONTAL) */
+}
+
+.grid-item {
+  background-color: #4c7caf;
+  padding: 2rem;
+}   
+
+.item1 {
+    grid-row: 1;
+}
+
+.item2 {
+    grid-row: 1;
+}
+
+.item3 {
+    grid-row: 1;
+}
+
+.item4 {
+    grid-row: span 2;
+    grid-column: 1/ 4;
+}

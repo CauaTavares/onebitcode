@@ -1,0 +1,280 @@
+* {
+  box-sizing: border-box;   /*Cada navegador tem suas medidas padrão isso é para removelas*/
+
+  margin: 0;
+  padding: 0;
+}
+
+:root { 
+  --color-white: #ffffff;       /* Ideias para :root */
+  --color-light: #e0e0e0;
+  --color-purple: #6c63ff;
+  --color-dark: #2c2c2e;
+  --color-black: #070707;
+
+  --color-primary: var(--color-purple);
+  --color-background: var(--color-light);
+  --color-foreground: var(--color-black);
+  --color-card-background: var(--color-white);
+}
+
+/* No BODY começar com BACKGROUND, COLOR e FONT FAMILY */
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: Arial, Helvetica, sans-serif;
+
+  line-height: 1.6; /* ALTURA DE LINHA */
+}
+
+/* Hero Section */
+
+.hero {
+  background: 
+    linear-gradient(to bottom right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
+    url("img/pexels-bertellifotografia-3321797.jpg");
+
+  background-position: center;  /* Serve para posicionar a imagem */
+
+  background-size: cover;  /* Evita que a imagem amasse (cobre toda a area disponivel)*/
+
+  color: var(--color-white);
+
+  min-height: 100vh;    /* (MIN) Fica responsivo (ele não ultrapassa esse tamnho pois é pouco texto) */
+
+  text-align: center; /* Centraliza o texto no centro*/
+
+  /* COMO CENTRALIZAR */
+  display: grid;    /* Sempre começar com DRIG  quando quiser centralizar */
+  place-content: center; /* Centraliza na VERTICAL e na HORIZONTAL*/
+
+  padding: 1.5rem;  /* Preenchimento */
+
+  width: 100%;  /* Define quanto de largura vai ocupar */
+}
+
+.hero h1 {
+  font-size: 2.5rem;    /* Tamanho da fonte */
+  margin-bottom: 1.5rem;    /* Margem em baixo */
+}
+
+.hero p {
+  font-size: 1.25rem; /* Tamanho da fonte */
+  margin-bottom: 1.5rem;    /* Margem em baixo */
+}
+
+.btn {
+  background-color: var(--color-primary);
+
+  border: none; /* Remove a borda */
+
+  border-radius: .5rem; /* Arredonda os cantos */
+
+  color: var(--color-white);
+
+  display: inline-block;  /* Assim fica melhor adicionar margem e padding nele de forma mais vertical */
+
+  font-size: 1rem; /* Tamanho da fonte */
+
+  padding: .75rem 1.5rem;   /* Preenchimento do botão (dando padding não precisa usar altura/largura no botão)*/
+
+  text-decoration: none;    /* Tira a decoração */
+}
+
+.btn:hover {    /* Quando passar o mouse em cima muda de cor */
+  background-color: #554ec9;
+}
+
+/* Speakers Section */
+
+.speakers {
+  padding: 3rem 1.5rem; /* preenchimento para separar uma section da outra */
+}
+
+.speakers h2 {  
+  font-size: 2rem;          /* Tamanho da fonte */
+  margin-bottom: 1.5rem;    /* Margem para baixo */
+  text-align: center;       /* Alinha o texto no centro */
+}
+
+.speakers-grid {    
+  display: grid;                /* Serve para deixar os itens em colunas */
+  grid-template-columns: 1fr;   /* Indica uma coluna */
+  gap: 1.5rem;                  /* Espaçamento entre os itens */
+}
+
+.speaker-card {    /* É nessa div que se aplica para dar o efeito papel */
+
+  background-color: var(--color-card-background);   
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombras */
+
+  border-radius: .75rem;        /* Arredonda os cantos */
+
+  padding: 1.5rem;              /* Preenchimento */
+
+  text-align: center;           /* Alinha os textos no centro */
+}
+
+.speaker-card img {
+  border-radius: 9999px;    /* Arredonda oo cantos (é so dar 50% que já fica com efeito de bolinha) */
+
+  margin-bottom: 1.5rem; /* Margem em baixo */
+
+    /* --------------------( IMPORTANTE )----------------------------- */
+  height: auto;     /* Altura automática vai sempre crescer*/
+  max-width: 10rem; /* (MAX) é para as imagens não crecerem mais do que isso (se limita na medida) */
+
+  width: 100%;  /* Vai ocupar 100% do espaço mas não vai passar dos 10rem */
+
+} /*--------------------( IMAGEM RESPONSIVA )------------------------*/
+
+
+.speaker-card h3 {
+  margin-bottom: .75rem;    /* Margem em baixo */
+  font-size: 1.5rem;        /* Tamanho da fonte */
+}
+
+/* Schedule Section */
+
+.schedule { 
+  padding: 3rem 1.5rem; /* Preenchimento */
+}
+
+.schedule h2 {
+  font-size: 2rem;          /* Tamanho da fonte */
+  margin-bottom: 1.5rem;    /* Margim em baixo */
+  text-align: center;       /* Alinha os textos no centro */
+}
+
+.schedule-grid {
+  display: grid;        /* Sempre começar com display: GRID */
+  grid-template-columns: 1fr;   /* Define a quantidade de colunas */
+  gap: 1.5rem;                  /* Espaçamento entre os itens */
+}
+
+.schedule-item {
+  background-color: var(--color-card-background);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);     /* Sombras */
+  border-radius: .75rem;                          /* Arredonda os cantos */
+  padding: 1.5rem;                                /* Preenchimento */  
+}
+
+.schedule-item h3 {
+  margin-bottom: .75rem;        /* Margem em baixo */
+}
+
+/* Newsletter Section */
+
+.newsletter {
+  padding: 3rem 1.5rem;     /* Preenchimento */
+}
+
+.newsletter-grid {  /* Elemento pai que serve para posicionar as SECTIONS */
+
+  display: grid;                /* Começar sempre pelo display: GRID */
+  grid-template-columns: 1fr;   /* Define a quantidade de colunas */
+  gap: 1.5rem;                  /* Espaçamento entre os itens */
+  align-items: center;          /* Centraliza os itens no centro */
+}
+
+.newsletter-text {
+  text-align: center;           /* Centraliza o texto */
+}
+
+.newsletter-text h2 {
+  font-size: 2rem;              /* Tamanho da fonte */
+  margin-bottom: .75rem;        /* Margem em baixo */
+}
+
+.newsletter-text p {    
+  color: #888888;      
+  margin-bottom: 1.5rem;  /* Margem em baixo */
+}
+
+.form-group label {         
+  display: block; /* (Serve para quebrar de linha) Serve para quebrar de linha */
+
+  font-size: 1rem;          /* Tamanho da fonte */
+
+  margin-bottom: .5rem;     /* Margem em baixo */
+}
+
+.form-group input {
+  background-color: var(--color-card-background);
+  border: 1px solid #888888;
+  border-radius: .5rem;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  max-width: 32rem;
+  padding: .75rem;
+  width: 100%;
+}
+
+.newsletter-image {         /* Tem como posicionar IMAGEM com (TEXT-ALIGN) */
+  text-align: center;   /* Alinha os texto no centro */
+}
+
+.newsletter-image img {
+  height: auto;         /* Garante que vai ficar responsivo */
+  max-width: 75%;       /* Define o tamanho da imagem (MAX) significa que não vai crescer mais do que isso */
+}
+
+/* Footer Section */
+
+.footer {
+  padding: 1.5rem;      /* Preenchimento */
+  text-align: center;   /* Centraliza o texto no centro */
+}
+
+.footer p {
+  margin-bottom: 1.5rem;        /* Margem em baixo */
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 768px) {    /* PARA TABLETS */
+  .hero h1 {
+    font-size: 3rem;    /* Tamanho da fonte */
+  }
+  
+
+                    /* MANEIRA MAIS SIMPLES DE FAZER A VERSÃO PARA PC */
+  .speakers-grid {                                  
+    grid-template-columns: repeat(3, 1fr);  /* Vai dividir em 3 frames (em colunas [Na VERTICAL]) */
+  }
+
+  .schedule-grid {
+    grid-template-columns: repeat(2, 2fr); /* Vai dividir em 2 frames (em colunas [Na VERTICAL]  */
+  }
+
+  .newsletter-grid {
+    grid-template-columns: repeat(2, 1fr); /* Vai dividir em 2 frames (em colunas [Na VERTICAL]  */
+  }
+
+  .newsletter-text {
+    text-align: left;       /* Centraliza na ESQUERDA */
+  }
+}
+
+@media screen and (min-width: 1024px) {   /* Versão para TVS */
+  .hero,
+  .speakers,
+  .schedule,
+  .newsletter {
+    padding: 4rem 8rem;
+  }
+}
+
+/* Color Scheme */
+
+/*----------------------- (IMPORTANTE) --------------------------------------*/
+@media screen and (prefers-color-scheme: dark) { /* PRESTAR ATENÇÃO NO :FOOT */
+  :root {
+    --color-background: var(--color-dark);
+    --color-foreground: var(--color-white);
+    --color-card-background: var(--color-black);
+  }
+}
+
+/* -------- ( MANEIRA MAIS RÁPIDA DE ADICIONAR MODO ESCURO NO SITE ) --------- */

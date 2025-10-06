@@ -1,0 +1,127 @@
+                                                /* >>>VERSÃO DO PROFESSOR<< */
+
+* {
+  box-sizing: border-box;       /* Serve para evitar conflitos entre as medidas das caixas (um padding não ficar encima do outro) */
+
+  margin: 0;
+  padding: 0;
+}
+
+:root {                      /* IDEIAS DE NOMES PARA :ROOT */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-primary: #ff575f;
+  --color-secondary: #396a4d;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between; /* Serve para colar as pontas na direita/esqueda */
+
+                                        /* DICA */
+  padding: 1rem 4rem;   /*Aqui nao foi usado o (SPACE-AROUND) foi dado um padding para que ficasse distante da borda dir/esq */
+
+  position: fixed;  /* Serve para deixar o cabecalho fixo e mover junto com o scroll */
+
+  top: 0;       /* Garante que vá ficar no topo (0) */
+
+  width: 100%;
+
+  z-index: 10;      /* Serve para forçar a ficar por cima dos elementos */
+}
+
+header > nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* Serve para deixar centralizado */
+  gap: 2rem;
+}
+
+header a {          /* Mexe diretamente no (a) dentro do header */
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+header > nav a:hover {  /* quando passa o mouse encima ela volta a sublinhar */
+
+    text-decoration: underline;     
+}
+
+.bg-img {
+  width: 100%;
+  min-height: 100vh;        /* Para deixar a imagem responsiva */
+  object-fit: cover;        /* Corrige a distorção da imagem */
+}
+
+main {
+  display: flex;            /*SEMPRE COMEÇAR COM DISPLAY*/
+  flex-direction: column;   /* Deixa em coluna */
+  justify-content: center;  /* Centraliza na vertical */
+  align-items: center;      /* Centraliza na horizontal */
+
+  min-height: 100vh;        /* PRECISA DE ALTURA para centralizar  */
+  min-width: 100%;          
+
+  position: absolute;   /* Serve para posicionar a iamgem em baixo dos textos */    
+
+  top: 0;            /* vai ficar absoluto ao topo da pagina */
+}
+
+main > h2 {
+  color: var(--color-primary);
+  font-size: 4rem;              /*Tamanho da fonte */
+  margin-bottom: 2rem;
+  text-align: center;
+
+  text-shadow: 0px 3px 3px var(--color-black); /* COLOCAR SOMBRA EM TEXTO */
+
+  -webkit-text-stroke: 1px var(--color-black); /* BORDA EM VOLTA DO TEXTO */
+}
+
+.call-to-action {
+  display: flex;
+  gap: 2rem;
+}
+
+.call-to-action > a {
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-white);
+  border-radius: .5rem;
+  color: var(--color-white);
+  padding: .75rem 1.25rem;
+  text-decoration: none;
+}
+
+.call-to-action > a:hover {         /* SER BEM EXPECIFICO */
+  background-color: var(--color-secondary); /* Muda a cor quando o mouse passa */
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 1.5rem;
+  position: fixed;  /* Garante que fique fixo na tela */
+  right: 0;         /* Garante que fique na direita */
+  bottom: 0;        /* Garante que fique embaixo */
+}
+
+footer > nav {
+  display: flex;
+  flex-direction: row-reverse;  
+  gap: 1.5rem;
+}
+
+footer a {
+  color: var(--color-white);
+  text-decoration: none;
+  text-transform: uppercase;    /* Tranforma em maiuscula as letras*/
+}
+
+footer a:hover {   /*Essa seleção significa aplicar somente nós links do rodapé*/
+
+  text-decoration: underline;   /* quando passa o mouse encima ela volta a sublinhar */
+}   

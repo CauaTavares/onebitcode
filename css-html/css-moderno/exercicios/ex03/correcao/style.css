@@ -1,0 +1,92 @@
+body {
+  background-color: #2c2c2f;
+  color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.page-container { /* NÃO FOI USADO TEMPLATE-ROW POIS AS LINHAS SÃO INFINITAS (podem crescer a vontade) */
+
+  display: grid;
+  gap: 1rem;
+
+  /* (minmax) Serve para se adaptar ao tamanho da tela */
+  grid-template-columns: minmax(10rem, 20rem) 1fr; 
+
+  margin: 0 auto;  /* Para centralizar no meio da pagina */
+  max-width: 74rem;  /* ESTILO FOLHA */
+}
+
+a {         /* IR ESTILIZANDO A PÁGINA NORMALMENTE COMO TODO SITE */
+  color: #43f6c9;
+  text-decoration: none;
+}
+
+a:hover {   /* Quando passar o mouse em cima aparece a linha*/
+  text-decoration: underline;
+}
+
+header {
+  grid-column: span 2;
+  grid-row: 1;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+nav a {
+  margin: 1rem;
+}
+
+.intro {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+main {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.blog-posts {   /* AQUI SÃO OS ESTILOS DOS FILHOS DO MAIN */
+
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);  /* Serve para organizar as sections dentro do main */
+
+}
+
+/* significado --> (TEXTO ABAIXO) <-- */
+/* O PRIMEIRO (FILHO) DA TAG (ARTICLE) DENTRO DE (MAIN{blog-posts}) */
+
+.blog-posts > article:first-child {  /* Serve para posicionar um conteúdo expecifíco que está dentro do main */
+
+  grid-column: span 2;  /* Mesma coisa que (1 / 3) serve para espalhar do 1 ao 2 */
+}
+
+.post img {       /* Estilos da imagem */
+  border-radius: .5rem;
+  height: auto;
+  width: 100%;
+}
+
+aside {      /* CONTEÚDO DA ESQUERDA */
+  grid-column: 1; /* Só para deixar explicíto que tem que ficar aqui*/
+  grid-row: 2 / 4;    /* estica ate o final(para baixo) no site o conteúdo lateral */
+}
+
+aside li {
+  margin: .5rem 0;
+}
+
+                /* Não usar a div que é filha da tag para estilizar (usar direto no pai) */
+footer {
+  grid-column: span 2; /* span serve para forçar ele a "espalhar" por duas linhas */
+
+  grid-row: 4;  /* forcar ele a ocupar a linha 4 */
+
+  border-top: 1px solid #fff;   /* Estilos do footer */
+  margin-top: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}

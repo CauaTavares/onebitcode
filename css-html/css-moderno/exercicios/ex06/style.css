@@ -1,0 +1,316 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-white: #ffffff;
+    --color-ligth: #e0e0e0;
+    --color-primary:#6c63ff;
+    --color-dark: #2c2c2e;
+    --color-black: #070707;
+}
+
+/* object-fit: cover faz o mesmo que background-size: cover, só que para imagens reais (<img>). */
+
+body, html {    
+    background-color: var(--color-ligth);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100%;            /* evita rolagem lateral */
+    height: 100%;          /* mantém altura total */
+    overflow-x: hidden;     /* garante que nada transborde */
+    position: relative;
+}
+
+.hero {
+    background: url(img/pexels-bertellifotografia-3321797.jpg) no-repeat center center;
+
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.hero-content {
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.1), var(--color-black));
+
+    color: var(--color-white);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.hero-content h1 {
+    margin: 0 3rem;
+    font-size: 2rem;
+    line-height: 1.5;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.hero-content p {
+    margin: 0 3rem;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-bottom: 2rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.btn {
+    padding: .75rem 1.5rem;
+    background-color: var(--color-primary);
+    border-radius: .5rem;
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 1rem;
+    border: 2px solid var(--color-primary);
+}
+
+.speakers,
+.schedule{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+}
+
+.speakers h2 {
+    margin: 3rem 0;
+}
+
+.speakers-grid {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
+    width: 100vw;
+}
+
+.speaker-card {             /* EFEITO PAPEL */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 3rem;
+    width: 90%;
+    margin-bottom: 1.5rem;
+    background-color: var(--color-white);
+    border-radius: .5rem;
+    text-align: center;
+}
+
+.speaker-card h3 {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.speaker-card p {
+    font-size: 1rem;
+}
+
+.speaker-card img {
+    border-radius: 50%;
+    height: 10rem;
+    width: 10rem;
+}
+
+.schedule h2 {
+    margin: 3rem 0;
+}
+
+.schedule-item {
+    background-color: var(--color-white);
+    margin-bottom: 1.5rem;
+    border-radius: .5rem;
+    padding: 1rem;
+}
+
+.schedule-item h3 {
+    padding-bottom: 1rem;
+}
+
+.schedule-item p {
+    text-align: left;
+}
+
+.newsletter-grid {
+    padding: 1rem;
+}
+
+.newsletter-image {
+    display: flex;
+    justify-content: center;
+}
+
+.newsletter-image img {
+    height: 20rem;
+    width: 20rem;
+}
+
+.newsletter-text {
+    text-align: center;
+}
+
+.newsletter-text h2 {
+    padding: 0 1rem;
+    line-height: 1.7;   
+    margin-bottom: 1rem;
+}
+
+.newsletter-text p {
+    font-size: .75rem;
+    color: rgba(0, 0, 0, 0.732);
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+}
+
+.form-group label {
+    padding-bottom: 1rem;
+}
+
+.form-group input {
+    border-radius: .5rem;
+    height: 2.5rem;
+    padding: 1rem;
+    border: 1px solid black;
+    margin-bottom: 1rem;
+}
+
+.footer, p {
+
+    text-align: center;
+    padding: 1rem 0 2rem;
+}
+
+@media screen and (min-width: 1080px){
+    .speaker {
+        margin: 0 5rem;
+    }
+
+    .speakers-grid {
+        flex-direction: row;
+        gap: 1.5rem;
+        width: 90%;
+    }
+
+    .schedule {
+        margin: 0 5rem;
+    }
+
+    .schedule-grid {
+        display: grid;
+        gap: 1.5rem;
+
+        grid-template-rows: repeat(2, 40%);
+        grid-template-columns: repeat(2, 43.5vw);
+
+        grid-template-areas: 
+        "card1 card2"
+        "card3 card4";
+    }
+
+    .card1 {
+        grid-area: card1;
+    }
+
+    .card2 {
+        grid-area: card2;
+    }
+
+    .card3 {
+        grid-area: card3;
+    }
+
+    .card4 {
+        grid-area: card4;
+    }
+
+    .newsletter-grid {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10rem;
+    }
+
+    .newsletter-image img {
+        height: 90%;
+        width: 90%;
+    }
+
+    .newsletter-text {  
+        text-align: left;
+        width: 35%;
+    }
+
+    .newsletter-text h2 {
+        font-size: 2rem;
+        padding: 0;
+    }
+
+    .newsletter-text p {
+        text-align: left;
+        font-size: 1.25rem;
+        padding: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group input {
+        height: 3rem;
+        width: 30rem;
+    }
+
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--color-dark);
+    }
+    
+    .speakers h2 {
+        color: var(--color-ligth);
+    }
+
+    .speaker-card {
+        background-color: var(--color-black);
+    }
+
+    .speaker-card h3, p {
+        color: var(--color-white);
+    }
+
+    .schedule h2 {
+        color: var(--color-white);
+    }
+
+    .schedule-item {
+        background-color: var(--color-black);
+    }
+
+    .schedule-item h3, p {
+        color: var(--color-white);
+    }
+
+    .newsletter-text h2, p {
+        color: var(--color-white);
+    }
+
+    .form-group label {
+        color: var(--color-white);
+    }
+
+    .form-group input {
+        background-color: var(--color-black);
+    }
+
+}
+
+
+
