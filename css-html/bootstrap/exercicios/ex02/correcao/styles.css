@@ -1,0 +1,26 @@
+.cover-section {
+  background: 
+    linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), 
+    url('img/pexels-kellie-churchman-371878-1001682.webp');   /* Imagem no css para o texto ficar por cima e com degrade*/
+  background-size: cover;           /* Evita que a imagem amasse e fique destorcida */
+  background-position: center;      /* Serve para posicionar a imagem */
+}
+
+.card-testimonial {
+  max-width: 24rem;     /* (MAX) Serve para limitar a imagem (ela não vai crescer mais do que isso! [Mas vai diminuir o quanto for!]) */
+}
+
+.card-testimonial img {
+  height: 12rem;     /* ALTURA */
+  width: 12rem;     /* LARGURA */
+}
+
+.destinations-section {
+  background: 
+    linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+    url('img/praia.webp');       /* Imagem no css para o texto ficar por cima e com degrade*/
+
+  background-size: cover;          /* Evita que a imagem amasse e fique destorcida */
+  background-position: center;    /* Serve para posicionar a imagem */
+  min-height: 32rem;             /* (MIN) Serve para limitar a imagem (ela não vai diminuir mais do que isso! [Mas vai crescer o quanto for!]) */
+}
