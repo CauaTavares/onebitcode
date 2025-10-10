@@ -1,24 +1,24 @@
 <!doctype html>
-<html lang="pt-br" data-bs-theme="dark">
+<html lang="pt-br" data-bs-theme="light">
 
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>teste-1</title>
+  <title>Primeiro site Bootstrap/SCSS</title> <!-- ESTOU ME TORNANDO CAPAZ -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
-<body>
+<body class="text-light bg-light" style="height: 86vh;">
 
-  <nav class="navbar bg-dark fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Offcanvas dark navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
-        aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+  <nav class="navbar navbar-dar navbar-expand-lg bg-white">
+    <div class="container">
+      <a class="navbar-brand" href="#">DevHub</a>
+      <button class="navbar-toggler rounded-5" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+      <div class="offcanvas offcanvas-end text-bg-white" tabindex="-1" id="offcanvasDarkNavbar"
         aria-labelledby="offcanvasDarkNavbarLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
@@ -26,38 +26,208 @@
             aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <ul class="navbar-nav justify-content-start flex-wrap align-content-lg-center flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-door"></i> Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#"><i class="bi bi-compass"></i> Discover</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
+              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+                  class="bi bi-chat-dots"></i> Messages <span class="badge text-bg-danger">3</span></a>
             </li>
           </ul>
-          <form class="d-flex mt-3" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-            <button class="btn btn-success" type="submit">Search</button>
+          <form class="d-flex p-2 gap-2" role="search">
+            <input class="form-control me-2 bg-light" type="search" placeholder="Search on DevHub"
+              aria-label="Search" />
+            <button class="btn btn-success rounded-circle bg-white border border-primary" type="submit"><i
+                class="bi bi-search text-primary"></i></button>
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle rounded-5" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-three-dots-vertical"></i>
+                Options
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end text-start">
+                <li class="py-2"><a class="dropdown-item" href="#"><i class="bi bi-person-circle"></i> My Account</a>
+                </li>
+                <li class="py-2"><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Settings and Privacy</a>
+                </li>
+                <li class="py-2"><a class="dropdown-item" href="#"><i class="bi bi-question-circle"></i> Help and
+                    Support</a></li>
+                <hr class="border-bottom border-secondary">
+                <li class="py-2"><a class="dropdown-item" href="#"><i class="bi bi-moon-stars"></i> Switch theme</a>
+                </li>
+                <hr class="border-bottom border-secondary">
+                <li class="pt-2"><a class="dropdown-item" href="#"><i class="bi bi-door-open"></i> Logout</a></li>
+              </ul>
+            </div>
           </form>
         </div>
       </div>
     </div>
   </nav>
 
+  <main class="d-flex container flex-row w-100 h-100">
+
+    <!-- ------------------------(SIDEBAR[CONTEÚDO LATERAL])--------------------------------- -->
+
+    <section class="w-25 d-none d-lg-block">
+      <div class="bg-white rounded-3 p-3 mt-3 w-100">
+        <p class="text-black"><strong>Navigation</strong></p>
+
+        <ul class="text-black list-inline">
+          <li class="py-1 ps-2 text-secondary"><i class="bi bi-person"></i> Profile</li>
+          <li class="py-1 ps-2 text-secondary"><i class="bi bi-people"></i> Groups</li>
+          <li class="py-1 ps-2 text-secondary"><i class="bi bi-code"></i> Projects</li>
+          <li class="py-1 ps-2 text-secondary"><i class="bi bi-calendar-event"></i> Events</li>
+          <li class="py-1 ps-2 text-secondary"><i class="bi bi-bookmark"></i> Saved</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ---------------------( MAIN-> CARTÕES [CONTEÚDO PRONCIPAL])--------------------- -->
+    <section class="container-fluid mt-lg-3 w-100">
+      <!-- cartão 1-->
+      <div class="bg-white p-3 mt-4 mt-lg-0 rounded-3 w-100">
+        <img class="rounded-circle object-fit-cover" style="width: 3rem; height: 3rem;" src="src/scss/img/card1.jpg"
+          alt="Mulher">
+        <label for="itexto"></label>
+
+        <button type="button" class="p-1 ps-3 text-start text-secondary w-75 bg-light rounded-3 border-0"
+          data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">What have you been
+          building?</button> <!--  BOTÃO QUE CHAMA O MODAL-->
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+
+            <div class="modal-content bg-light">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <hr class="border-bottom border-secondary">
+
+              <div class="modal-body py-0 px-3">
+                <form>
+                  <div class="mb-3">
+                    <textarea class="form-control bg-white" id="message-text" rows="5"
+                      placeholder="Share something..."></textarea>
+                  </div>
+                </form>
+              </div>
+
+              <hr class="border-bottom border-secondary">
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary rounded-5" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary rounded-5">Publish Post</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-bottom border-secondary">
+
+      <!-- cartão 2-->
+      <div class="text-black bg-white rounded-3 p-2">
+
+        <div class="d-flex gap-2 mb-4">
+
+          <img class="rounded-circle object-fit-cover ms-2 mt-2" style="width: 3rem; height: 3rem;"
+            src="src/scss/img/card2.jpg" alt="Men">
+
+          <div class="">
+            <p class="mb-0 mt-1"><strong>John Doe</strong></p>
+            <p class="mb-0 pt- text-secondary">2 hours ago</p>
+          </div>
+
+        </div>
+        <p class="ps-2 mb-4">
+          Just launched my new open-source project! 🚀
+        </p>
+
+        <hr class="border-bottom border-secondary">
+
+        <div class="d-flex gap-5 justify-content-center">
+          <p><i class="bi bi-hand-thumbs-up"></i> Curtir</p>
+          <p><i class="bi bi-chat"></i> Comentar</p>
+          <p><i class="bi bi-share"></i> Compartilhar</p>
+        </div>
+      </div>
+
+      <!-- cartão 3 -->
+
+      <div class="text-black bg-white rounded-3 mt-4 p-2">
+
+        <div class="d-flex gap-2 mb-4">
+
+          <img class="rounded-circle object-fit-cover ms-2 mt-2" style="width: 3rem; height: 3rem;"
+            src="src/scss/img/card3.jpg" alt="Men">
+
+          <div class="">
+            <p class="mb-0 mt-1"><strong>Jane Smith</strong></p>
+            <p class="mb-0 pt- text-secondary">5 hours ago</p>
+          </div>
+
+        </div>
+        <p class="ps-2 mb-4">
+          Looking for a collaborator for my React app. DM me!
+        </p>
+
+        <hr class="border-bottom border-secondary">
+
+        <div class="d-flex gap-5 justify-content-center">
+          <p><i class="bi bi-hand-thumbs-up"></i> Curtir</p>
+          <p><i class="bi bi-chat"></i> Comentar</p>
+          <p><i class="bi bi-share"></i> Compartilhar</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------(SIDEBAR[CONTEÚDO LATERAL DOIS])--------------------------------- -->
+    <section class="w-25 d-none d-lg-block">
+
+      <div class="bg-white rounded-3 w-100 p-2 mb-3 mt-3">
+        <p class="text-black mb-2"><strong>Trends</strong></p>
+
+        <ul class="text-black list-inline">
+          <li><a href="#">#OpenSoure</a></li>
+          <li><a href="#">#ReacUS</a></li>
+          <li><a href="#">#WebDevelopment</a></li>
+          <li><a href="#">#CSS</a></li>
+        </ul>
+      </div>
+
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="src/scss/img/card1.jpg" class="d-block w-100 object-fit-cover" style="height: 10rem; width: 5rem;" alt="Pessoas">
+          </div>
+          <div class="carousel-item">
+            <img src="src/scss/img/card2.jpg" class="d-block w-100 object-fit-cover" style="height: 10rem; width: 5rem;" alt="Pessoas">
+          </div>
+          <div class="carousel-item">
+            <img src="src/scss/img/card3.jpg" class="d-block w-100 object-fit-cover" style="height: 10rem; width: 5rem;" alt="Pessoas">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="text-black bg-white p-3 text-center">
+      2025 DevHub. All rights reserved
+    </p>
+  </footer>
+
   <script type="module" src="/src/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
