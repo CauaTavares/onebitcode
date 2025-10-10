@@ -1,9 +1,9 @@
 @use 'variables' as *;
 
-form.inline {
+.form-inline {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: end;
+    justify-content: start;
     gap: $spacing-sm;
 
     label {
