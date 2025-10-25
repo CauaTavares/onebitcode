@@ -20,8 +20,10 @@
   --box-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.2);
   --padding-sm: 1rem;
 }
+                            /* COMO USAR DISPLAY: GRID */  
             /*1--> COMEÇAR SEMPRE PELO (DISPLAY GRID NA TAG PAI DE TODOS) */
-body {                                     
+body {                                    
+
   background-color: var(--color-light);
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;    /* Garante que vai ocupar 100% da tela */ 
@@ -30,7 +32,7 @@ body {
   grid-template-columns: 16rem 1fr; /* Usar uma fr*/
   grid-template-rows: 4rem 1fr  3rem;   /* FRAÇÃO é USADA para crescer INDEFINIDAMENTE */
 
-  grid-template-areas: /*Forma mais vizual*/
+  grid-template-areas: /*Forma mais visual*/
     "header  header"
     "sidebar content"
     "sidebar footer";
@@ -66,9 +68,9 @@ header {
 .sidebar a {  /* Pode pegar a tag (link) direto junto com a class pai (sidebar) */
 
   color: var(--color-white);
-  display: block;     /* precisa do display para dar o padding */
+  display: block;     /* precisa do display:block para dar o padding */
   padding: 1rem 2rem;
-  text-decoration: none; /* Tira a linha o sublinhado do link */
+  text-decoration: none; /* Tira o sublinhado do link */
 }
 
 /* ------------ (EFEITO IMPORTANTE)---------------*/
@@ -136,7 +138,7 @@ header {
 
   color: var(--color-grey-500);
 
-  display: grid;  /* Se for centralizar usar o display: grid/flex */
+  display: grid;  /* Sempre for centralizar usar o display: grid/flex */
 
   height: 12rem;  /* Altura das caixas */
 
@@ -148,7 +150,7 @@ header {
 
   gap: var(--padding-sm);   /* Aplica o mesmo espaçamento por fora e por dentro (Sendo assim não precisa dar margem nos cantos) */
 
-  grid-template-areas:  /* Jeito mais vizual */
+  grid-template-areas:  /* Jeito mais visual */
     "chart1 chart2 chart3"
     "chart4 chart4 chart4";
 }

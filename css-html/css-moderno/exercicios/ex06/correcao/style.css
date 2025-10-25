@@ -117,7 +117,7 @@ body {
 }
 
 .speaker-card img {
-  border-radius: 9999px;    /* Arredonda oo cantos (é so dar 50% que já fica com efeito de bolinha) */
+  border-radius: 9999px;    /* Arredonda os cantos (é so dar 50% que já fica com efeito de bolinha) */
 
   margin-bottom: 1.5rem; /* Margem em baixo */
 
@@ -230,8 +230,8 @@ body {
 .footer p {
   margin-bottom: 1.5rem;        /* Margem em baixo */
 }
-
-/* Media Queries */
+                                      /* ( IMPORTANTE ) */
+/* -------------------------------------- Media Queries ---------------------------------------------- */
 
 @media screen and (min-width: 768px) {    /* PARA TABLETS */
   .hero h1 {
