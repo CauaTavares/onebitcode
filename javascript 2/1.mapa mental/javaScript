@@ -1,0 +1,991 @@
+TAGS GERAIS DO JAVASCRIPT:
+(A FELICIDADE É UMA CONSQUISTA E EU VOU CONQUISTAR A MINHA!)
+/* Estou me tornando capaz */
+
+
+
+-------------------------------( ANALISE DOS EXERCICICOS: )----------------------------------------
+
+
+
+
+
+
+
+
+
+-------------------------------( VISITANDO NOVAS CIDADES: )----------------------------------------
+EX: VISITANDO NOVAS CIDADES: ( - )
+
+FACILIDADES: Tive muita facilidade em fazer o básico do exercicío
+
+DIFICULDADES: Tive dificuldade em como fazer para exibir na tela os varios valores da VARIÁVEL mas é so usar (+=)
+E também tive dificuldade em saber como mostrar a quantidade de valores dentro da VARIÁVEL mas para isso é só declarar uma VARIÁVEL vazia depois colocar dentro de um LAÇO de REPETIÇÃO (++)
+
+-------------------------------( CÁLCULO DE DANO: )----------------------------------------
+EX: CÁLCULO DE DANO: (493 - 521)
+
+FACILIDADES: Consegui finalizar o exercicío usando logica de programação
+
+DIFICULDADES: Estava com dificuldade em fazer a logica (ataque MAIOR que defesa && escudo estritamente igual a STRING 'nao') (ataque > defesa && escudo === 'nao')
+
+-------------------------------( ANALISADOR DE NÚMEROS: )----------------------------------------
+EX: ANALISADOR DE NÚMEROS (300 - 370)
+
+FACILIDADES: Consegui finalizar o EXERCICÍO graças a esse documento tive facilidade em pegar o valor dos INPUTS e da DIV
+
+DIFICULDADES:
+1 - Estou com dificuldade em fazer com que o valor que o usuário digitar fique salvo dentro do ARRAY
+2 - Estou com dificuldade em fazer a VERIFICAÇÃO para não digitar NÚMERO acima de 100 fiz (num.value >= 100) mas ele não considera o (maior ou IGUAL a)
+
+RESOLUÇÕES:
+1 - Para salvar os valores digitados pelo usuário o ARRAY precisa ser criado FORA da FUNÇÃO
+2 - Para fazer a VERIFICAÇÃO foi necessário usar funções com parâmetros (linha 318)
+
+
+
+------------------------------( CONTADOR: )----------------------------------------
+EX: CONTADOR DE NÚMEROS
+
+FACILIDADES:
+Tive muita facilidade graças a esse documento em pegar o valor do INPUT pelo ID e transformar as VARIÁVEIS em NÚMEROS
+Tive facilidade em criar o for Variável(i); Enquanto(i) for MENOR que (f); Faça (i) MAIS IGUAL (p)
+
+DIFICULDADES:
+Tive dificuldade em fazer as VERIFICAÇÕES e em como imprimir na tela todos os resultados da VARIÁVEL(i)
+
+RESOLUÇÕES:
+Para fazer as VERIFICAÇÕES é preciso (.value) pega o VALOR dentro da VARIÁVEL (.length) pega o comprimento da VARIÁVEL
+Para VERIFICAR se o usuário deixou (passo) VAZIO é so fazer um (if) se for IGUAL a 0 (p = 1) Assim segue o condigo com (p valendo 1)
+Para imprimir na tela os vários valores que a VARIÁVEL recebe tive que criar uma VARIÁVEL vazia e fazer ela MAIS RECEBER o valor de (i)
+Estava com muita dificuldade de como fazer a conta de (i + p) descobri que é preciso somente colocar (i += p) i MAIS IGUAL p
+
+function contar() {
+    let ini = window.document.getElementById('txti')    // Serve para pegar o valor do INPUT pelo ID('txti')
+    let fim = window.document.getElementById('txtf')    // Serve para pegar o valor do INPUT pelo ID('txtf')
+    let pas = window.document.getElementById('txtp')    // Serve para pegar o valor do INPUT pelo ID('txtp')
+    let res = window.document.querySelector('div#res')  // Serve para pegar o valor do INPUT igual CSS ('div#res')
+
+    let i = Number(ini.value)  	 			// Serve para transformar em NÚMERO a VARIÁVEL que é "STRING"
+    let f = Number(fim.value)   			// Serve para transformar em NÚMERO a VARIÁVEL que é "STRING"
+    let p = Number(pas.value)   			// Serve para transformar em NÚMERO a VARIÁVEL que é "STRING"
+
+
+// VERIFICAÇÃO: (SE) qualquer INPUT tiver valor 0 faça isso:
+if (ini.value.length == 0 || fim.value.length == 0 || pas.value.length == 0) {
+    res.innerHTML = 'Impossivel contar!'
+
+} else {
+    res.innerHTML = 'Contando: '
+
+if (p <= 0) {   		 // VERIFICAÇÃO: (SE) "PASSO" for MENOR ou IGUAL a 0 faça isso:
+    window.alert('Passo inválido! Considerando PASSO 1')
+    p = 1
+}
+
+if (i < f) { 			 // VERIFICAÇÃO: Significar (SE) "INICIO" for MENOR que "FIM" faça isso:
+    for (i; i < f; i += p) {	 // Estava com muita dificuldade de como fazer a conta de (i + p) descobri que é preciso somente colocar (i += p) i MAIS IGUAL p (NÃO SOMENTE I + P)
+      				 // VARIÁVEL(i); Enquanto (i) for MENOR que (f); Faça (i) MAIS IGUAL (p)
+
+    res.innerHTML += `${i} `    // Serve para imprimir na tela o resultado SEMPRE usar (.innerHTML) para imprimir na tela pelo JS
+
+} else {			// VARIÁVEL(i); Enquanto (i) for MENOR que (f); Faça (i) MAIS IGUAL (p)
+ 				// Estava com muita dificuldade de como fazer a conta de (i + p) descobri que é preciso somente colocar (i += p) i MAIS IGUAL p (NÃO SOMENTE I + P)
+     for (i; i > f; i -= p) {
+ 
+     res.innerHTML += `${i} `   // Serve para imprimir na tela o resultado SEMPRE usar (.innerHTML) para imprimir na tela pelo JS
+
+
+------------------------------------------------------( TABUADA: )----------------------------------------
+EX: TABUADA
+
+FACILIDADES: Tive facilidade em pegar o valor do INPUT pelo ID, transformar em NÚMERO a VARIÁVEL em STRING, fazer a VERIFICAÇÃO, fazer o FOR e em como criar ELEMENTO em JS
+
+DIFICULDADES: Tive dificuldade em como configurar o SELECT para mostrar corretamente para o usúario e em como LIMPAR o INPUT para o PROXIMO VALOR
+
+RESOLUÇÕES: Para configurar o SELECT foi preciso somente colocar um (SIZE='10') e (<option>Digite um número acima</option>)
+Para LIMPAR o INPUT para o proximo valor é preciso somente colocar a VARIÁVEL do INPUT (.innerHTML) recebe NADA (select.innerHTML = '')
+
+
+function gerar() {
+    let number = window.document.getElementById('number')   // Serve para pegar o VALOR do INPUT pelo ID('number')
+    let select = window.document.getElementById('list')     // Serve para pegar o SELECT do HTML
+    let n = Number(number.value)                            // Serve para transformar em NÚMERO a VARIÁVEL que começa em "STRING"
+
+    if (number.value.length == 0) {                         // Serve para VERIFICAR se o usúario digitou algum VALOR
+        window.alert('Por favor, digite um número!')
+    } else {
+ 	select.innerHTML = ''				    // Serve para limpar o INPUT para digitar o proximo VALOR
+        for (var i = 1; i <= 10; i++) {                     // A VARIÁVEL (i) recebe 1; Enquanto (i) for MENOR ou IGUAL a 10; ADICIONE mais 1
+            console.log(`${n} X ${i} = ${n \\\\\\\* i}`);
+
+            // COMO CRIAR ELEMENTO NO HTML PELO JS
+
+            let option = window.document.createElement('option')    // 1 - Cria a VARIÁVEL(option) e usa (.createElement) para criar o elemento que quiser('option, img')
+            option.text = `${n} X ${i} = ${n \\\\\\\* i}`                  // 2 - (.text) Serve para MODIFICAR por dentro o elemento criado
+            select.appendChild(option)                              // 3 - Pega a VARIÁVEL aonde vai APARECER o ELEMENTO CRIADO e usa (.appendChild) para adiciona-lo (option)
+
+-------------------------------( VERIFICADOR DE IDADE: )----------------------------------------
+EX: VERIFICADOR DE IDADE
+
+FACILIDADES:
+
+Estou simplesmente vendo facilidade antes nunca vistas nesses exercicios graças a esse documento!! (10/12/25) 6:31
+
+
+DIFICULDADES:
+
+Estou com dificuldade em fazer a operação para saber quando vai mostrar FEM/MAS
+Não consegui finalizar esse exercicío pois não soube como utilizar o (INPUT-RADIO) para saber como o usúario estava selecionando MAS/FEM
+Não consegui fazer a verificação para saber se o usúario digitou alguma coisa no input ou deixou ele vazio
+
+
+Solução:
+
+if (fsex[0].checked) 		// Serve para verificar se o INPUT-RADIO[0] MASCULINO está selecionado (SE SIM) faça isso:
+} else if (fsex[1].checked)	// Serve para verificar se o INPUT-RADIO[1] FEMININO está selecionado (SE SIM) faça isso:
+
+if (fano.value.length == 0 || Number(fano.value) > ano)
+// Serve para verificar se o usúario digitou alguma coisa ou deixou o INPUT vazio
+// Se (VARIÁVEL) o valor dentro da VARIÁVEL(.VALUE) as letras dentro(.length) for igual a 0
+// Ou (VARIÁVEL) o valor dentro da VARIÁVEL(.VALUE) for MAIOR que (ANO) FAÇA ISSO:
+
+
+
+--------------------------------- (HORA DO DIA) -----------------------------------------------------
+EX: HORA DO DIA
+
+FACILIDADES:
+
+Tive muita facilidade graças a esse documento em pegar os valores dos INPUTS e de mostrar a HORA na tela
+Depois que entendi como colocar imagem pelo JS fui muito simples de fazer
+
+DIFICULDADE:
+
+Estou na duvida se precisa de FUNÇÃO ou não... (imagino que não)... Consegui fazer sem função, mas o professor usou função
+Agora estou na duvida como colocar imagem no HTML pelo JS... Aprendi(cria o elemento, coloca o caminho da imagem, coloca a imagem em uma DIV vazia)
+
+
+
+let res = window.document.getElementById('res')     // Serve para pegar o INPUT do HTML pelo ID
+let foto = window.document.getElementById('foto')   // Serve para pegar o INPUT do HTML pelo ID
+var corpo = window.document.body                    // 1 - Serve para VARIÁVEL(CORPO) GUARDAR o CAMINHO da ÁRVORE DOM do BODY
+
+let agora = new Date()          //  Serve para pegar a hora exata do PC
+let hora = agora.getHours()     //  Serve para GUARDAR na VARIÁVEL (HORA) a hora exata do PC
+
+res.innerHTML = `Agora são ${hora} horas.`  // Sempre usar .INNERHTML para escrever no HTML pelo JS
+
+//-------------------------------------- ( COMO COLOCAR IMAGEM E CRIAR ELEMENTOS ) ---------------------------------//
+
+let imagem = window.document.createElement('img')  	 // 1 - (Não tem o elemento IMG?) Cria o elemento(IMG) no HTML pelo JS
+imagem.src = '../img/manha.png'				 // 2 - (Qual imagem?) Serve para colocar o CAMINHO da IMAGEM
+foto.appendChild(imagem)   				 // 3 - (Onde vai colocar essa imagem?) Serve para dizer onde colocar a imagem
+
+
+let item = document.createElement('option')        	// 1- Serve para CRIAR um ELEMENTO no HTML pelo JS
+item.text = `Valor ${num.value} adicionado.`        	// 2- Serve para MODIFICAR esse ELEMENTO criado
+lista.appendChild(item)                             	// 3- Serve para COLOCAR esse ELEMENTO criado pelo JS no HTML
+
+----------------------------------( OPERADORES )------------------------------------------------
+
+ 							 /* Forma simplificada */
+5 + 2 = 7 	/* Mais */				 n = n + 4   n += 4   n++
+5 - 2 = 3	/* Menos */				 n = n - 5   n -= 5   n--
+5 * 2 = 10	/* Vezes */				 n = n * 4   n *= 4
+5 / 2 = 2.5	/* Divisão */				 n = n / 2   n /= 2
+5 % 2 = 1	/* Resto de divisão */			 n = n ** 2  n **= 2
+5 ** 2 = 25	/* potencia (elevado ao quadrado) */	 n = n % 5   n %= 5
+
+5 > 2 = true	/* Maior */
+7 < 4 = false	/* Menor */
+8 >= 8 = true	/* Maior ou igual */
+9 <= 7 = false	/* Menor ou igual */
+5 == 5 = true	/* Igual */
+4 != 4 = false	/* Diferente */
+
+------------------------------------( OPERADORES LOGICOS(&&, ||, !)--------------------------------
+COMO LER:
+
+E(AND) = &&
+OU(OR) = ||
+NÃO(NOT) = !
+
+NEGAÇÃO !
+
+! TRUE = FALSE (Se for VERDADEIRO retorna FALSO)
+! FALSE = TRUE (Se for FALSO retorna VERDADEIRO)
+
+
+CONJUNÇÃO &&
+
+TRUE && TRUE = TRUE	(Basta APENAS UM ser FALSE para RETORNAR FALSE)
+TRUE && FALSE = FALSE	(Basta APENAS UM ser FALSE para RETORNAR FALSE)
+FALSE && TRUE = FALSE 	(Basta APENAS UM ser FALSE para RETORNAR FALSE)
+FALSE && FALSE = FALSE  (Só RETORNA VERDADE se os DOIS forem VERDADE)
+
+DISJUNÇÃO ||
+
+TRUE || TRUE = TRUE    (Basta APENAS UM ser VERDADEIRO para RETORNAR VERDADEIRO)
+TRUE || FALSE = TRUE   (Basta APENAS UM ser VERDADEIRO para RETORNAR VERDADEIRO)
+FALSE || TRUE =  TRUE  (Basta APENAS UM ser VERDADEIRO para RETORNAR VERDADEIRO)
+FALSE || FALSE = FALSE  (Só RETORNA FALSE se os DOIS forem FALSE)
+
+var a = 5
+var b = 8
+ 
+true && false  /* false */
+true && true   /* true */
+false || false /* false */
+true || false  /* false */
+true || true   /* true */
+
+
+//
+a  > b && b % 2 == 0 /* false */
+
+---------------------------------------( FUNÇÕES )------------------------------------------
+ESTRUTURA FUNÇÃO: function NOMEDAFUNÇÃO () {
+
+  (ON)LOAD = "nomeDaFunção" - Executa essa função assim que carrega o site
+  (ON)CLICK = "nomeDaFunção" - Executa essa função SEMPRE que o usuário CLICAR no BUTTOM
+
+}
+
+FUNÇÕES:
+São AÇÕES executadas assim que são chamadas ou em decorrência de algum evento.
+Uma função pode receber parâmetro e retornar um resultado.
+
+
+
+function verificar() {
+    var data = new Date()           					// Serve para pegar a DATA atual
+    var ano = data.getFullYear()    					// (.getFullYear) Serve para pegar os 4 digitos do ano (2025)
+
+    var fano = window.document.getElementById('txtano') 		// Pega o valor do INPUT pelo ID ('txtano')
+    var res = window.document.querySelector('div#res')  		// Pega o valor do INPUT igual CSS ('div#res)
+
+    // Como verificar se o INPUT está VAZIO:
+    if (fano.value.length == 0 || Number(fano.value) > ano) {           // Serve para verificar se o usuário colocou algum valor
+
+        window.alert('[ERROR] Verifique os dados e tente novamente')    // Mostra um alerta na tela
+    } else {
+
+        var fsex = document.getElementsByName('radsex')     		// Serve para pegar o valor do RADIO(não foi preciso selecionar qual[0, 1])
+        var idade = ano - Number(fano.value)               		// Serve para fazer a conta da IDADE e guardar na VARIÁVEL
+
+        var genero = ''     						// Serve para declarar uma VARIÁVEL vazia que vai receber um valor posteriormente
+
+        var img = window.document.createElement('img')      		// 1- Serve para criar o ELEMENTO (IMG) no HTML pelo JS
+
+        img.setAttribute('id', 'foto')                      		// Serve para criar um (ID 'FOTO') no ELEMENTO (IMG) pelo JS
+
+
+        // ESTRUTURA: (SE), A VARIÁVEL (fsex[0]) estiver SELECIONADA, FAÇA ISSO:
+
+        if (fsex[0].checked) {
+            genero = 'Homem'
+            if (idade < 10) {
+                img.setAttribute('src', 'img/bebe.m.png')   		// 2- Serve para mostrar o caminho da IMAGEM
+            } else if (idade < 21) {
+                img.setAttribute('src', 'img/jovem.m.png')  		// 2- Serve para mostrar o caminho da IMAGEM
+
+            } else if (idade < 50) {
+                img.setAttribute('src', 'img/adulto.m.png') 		// 2- Serve para mostrar o caminho da IMAGEM
+
+            } else {
+                img.setAttribute('src', 'img/idoso.m.png')  		// 2- Serve para mostrar o caminho da IMAGEM
+
+            }
+
+        // ESTRUTURA: (SE NÃO SE), a VARIÁVEL (fsex[1]) estiver SELECIONADA, FAÇA ISSO:
+
+        } else if (fsex[1].checked) {
+            genero = 'Mulher'               				// VARIÁVEL(genero) recebe o VALOR que vai IMPRIMIR na tela
+            if (idade < 10) {
+                img.setAttribute('src', 'img/bebe.f.png')   		// 2- Serve para mostrar o caminho da IMAGEM
+
+            } else if (idade < 21) {
+                img.setAttribute('src', 'img/jovem.f.png')  		// 2- Serve para mostrar o caminho da IMAGEM
+
+            } else if (idade < 50) {
+                img.setAttribute('src', 'img/adulto.f.png') 		// 2- Serve para mostrar o caminho da IMAGEM
+
+            } else {
+                img.setAttribute('src', 'img/idoso.f.png')  		// 2- Serve para mostrar o caminho da IMAGEM
+
+            }
+        }
+
+        res.style.textAlign = 'center'  				// Serve para acessar o ESTILO pela ÁRVORE DOM e centrar a DIV pelo JS
+        res.innerHTML = `Detectamos ${genero} com ${idade} anos.`   	// Sempre que for escrever na tela usar uma (DIV VAZIA) com (".innerHTML")
+
+        res.appendChild(img)    					// 3- Serve para colocar a imagem no HTML
+    }
+
+}
+
+------------------------------------------------------- (EX: ANALISADOR DE NÚMERO) --------------------------------------------------
+
+
+
+let num = window.document.querySelector('input#num')    			// Serve para pegar o valor do INPUT igual CSS
+let lista = window.document.querySelector('select#sel') 			// Serve para pegar o valor do INPUT igual CSS
+let res = window.document.querySelector('div#res')      			// Serve para pegar o valor da DIV igual CSS
+let valores = []                                        			// Serve para declarar um ARRAY vazio
+
+function isNumero(n) {                                  			// Declara uma função que recebe (n)
+    if (Number(n) >= 1 && Number(n) <= 100) {           			// Se o PARÂMETRO(n) estiver entre 1 e 100 retorne TRUE (SE NÃO retorne FALSE)
+        return true
+    } else {
+        return false
+    }
+}
+
+function inLista(n, l) {                                			// Declara uma função que recebe (n, l)
+    if (l.indexOf(Number(n)) != -1) {                   			// Se na lista o Number de (n) for DIFERENTE de -1 retorne TRUE (SE NÃO retorne FALSE)
+        return true                                    				// -1 indica que o VALOR não foi encontrado na lista
+    } else {
+        return false
+    }
+}
+
+function adicionar() {
+    if (isNumero(num.value) && !inLista(num.value, valores)) {  		// VERIFICAÇÃO se for um número e esse número NÃO estiver na lista faça isso:
+
+        valores.push(Number(num.value))                     			// Serve para ADICIONAR o VALOR que o usúario digitar dentro do ARRAY
+
+        let item = document.createElement('option')        		 	// 1- Serve para CRIAR um ELEMENTO no HTML pelo JS
+        item.text = `Valor ${num.value} adicionado.`        			// 2- Serve para MODIFICAR esse ELEMENTO criado
+        lista.appendChild(item)                             			// 3- Serve para COLOCAR esse ELEMENTO criado
+        res.innerHTML = ''                                 		 	// Serve para LIMPAR a DIV que recebe as respostas
+
+    } else {
+        window.alert('Valor inválido ou já encontrado na lista.')
+    }
+
+    num.value = ''  								// Serve para LIMPAR o INPUT
+    num.focus()     								// Serve para voltar o FOCO no INPUT
+}
+
+function finalizar() {
+    if (valores.length == 0) {          					// Verifica se o VETOR está vazio
+
+        window.alert('Adicione valores antes de finalizar!')
+    } else {
+        let tot = valores.length    						// Recebe a QUANTIDADE de valor do ARRAY
+        let mais = valores[0]      						// Serve para a VARIÁVEL (MAIOR) RECEBER o valor 0 para assim ir recebendo de um em um os outros VALORES
+        let menos = valores[0]      						// Serve para a VARIÁVEL (MENOR) RECEBER o valor 0 para assim ir recebendo de um em um os outros VALORES
+        let soma = 0                						// Variável recebe o valor 0
+        let media = 0               						// Variável recebe o valor 0
+        for(let pos in valores) {   						// Para cada posição em VALORES faz um teste
+
+            soma += valores[pos]        					// Serve para ele simplesmente para cada valor que o ARRAY recebe ele faz uma SOMA
+
+            if (valores[pos] > mais)   					// SE o que está dentro do ARRAY(pos está recebendo o ARRAY) for MAIOR que a VARIÁVEL (MAIOR) (MAIOR recebe 0)
+                mais = valores[pos]    					// Ele recebe o (valor que está dentro do ARRAY), MAIOR recebe o que está dentro da VARIÁVEL (VALORES[POS])
+
+            if (valores[pos] < menos)   				// Se o que está dentro do ARRAY(pos está recebendo o ARRAY) for MENOR que a VARIÁVEL (MENOR) (MENOR recebe 0)
+                menos = valores[pos]    				// Se o que está dentro do ARRAY for MENOR/MAIOR que o VALOR da VARIÁVEL (mais/menos) a VARIÁVEL guarda esse valor
+        }
+        media = soma / tot  							// Variável (media) RECEBE a (soma) divido pelo (tot)
+        res.innerHTML = ''  							// Serve para LIMPAR a DIV (res)
+
+        res.innerHTML += `<p>Ao todo, temos ${tot} números cadastrados.</p>`
+        res.innerHTML += `<p>O maior valor informado foi ${mais}.</p>`
+        res.innerHTML += `<p>O menor valor informado foi ${menos}.</p>`
+        res.innerHTML += `<p>Somanado todos os valores, temos ${soma}.</p>`
+        res.innerHTML += `<p>A média dos valores digitados é ${media} </p>`
+    }
+}
+---------------------------------------( CONDIÇÃO(IF, ELSE) )------------------------------------------
+
+
+function verificar() {
+  let naci = window.document.getElementById('txtn') // Serve para pegar o valor do INPUT pelo ID
+  let res = window.document.querySelector('div#res') // Serve para pegar o valor do INPUT BUTTON igual no CSS
+
+  if (naci.value == 'brasileiro') {
+     res.innerHTML = `Infelizmente você é ${naci.value}!`
+  } else {
+     res.innerHTML = `${naci.value} (In)Felizmente você é Estrangeiro!`
+
+Facilidades: Tive muita facilidade graças a esse documente em pegar o valor do INPUT pelo ID e criar o IF
+
+Dificuldades: Tive que pesquisar por que estava dando esse erro (object HTMLInputElement) e descobri que precisava pegar o VALOR que está dentro da div com (.VALUE)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+var agora = new Date()
+var hora = 0 //agora.getHours()
+console.log(`Agora são exatamente ${hora} horas.`);
+
+if (hora < 6) {
+    console.log('Boa Madrugada!');
+ 
+} else if (hora < 12) {
+    console.log('Bom Dia!');
+ 
+} else if (hora <= 18){
+    console.log('Boa Tarde!');
+ 
+} else {
+    console.log('Boa Noite!');
+ 
+}
+---------------------------------------------------------------------------------------------------------------------------------//
+EXERCÍCIO HORA DO DIA (COLOCANDO IMAGEM NO HTML PELO JS, MUDANDO O FUNDO)
+
+// Se (hora) for menor que 12 faça isso:
+
+if (hora < 12) {
+    imagem.src = '../img/manha.png'     // (Qual imagem?) Serve para colocar o CAMINHO da imagem
+    foto.appendChild(imagem)            // (Onde vai colocar essa imagem?) Serve para dizer onde colocar a imagem
+
+    corpo.style.background = '#dddd5fff'    // 2 - Serve para acessar o CSS pelo JS e mudar de cor o BODY
+ 
+} else if (hora <= 18) {                // Se (hora) for menor ou igual a 18 faça isso:
+    imagem.src = '../img/tarde.png'     // (Qual imagem?) Serve para colocar o CAMINHO da imagem
+    foto.appendChild(imagem)            // (Onde vai colocar essa imagem?) Serve para dizer onde colocar a imagem
+
+    corpo.style.background = '#d2691e'      // 2 - Serve para acessar o CSS pelo JS e mudar de cor o BODY
+
+} else {                                // Se NÃO faça isso:
+    imagem.src = '../img/noite.png'     // (Qual imagem?) Serve para colocar o CAMINHO da imagem
+    foto.appendChild(imagem)            // (Onde vai colocar essa imagem?) Serve para dizer onde colocar a imagem
+
+    corpo.style.background = '#423b3bff'        // 2 - Serve para acessar o CSS pelo JS e mudar de cor o BODY
+
+}   document.body.style.background = '#515154' // Jeito mais simples de mudar a cor de fundo
+
+
+------------------------------------------------------------------------------------------------------------------------------------//
+
+FACILIDADES
+
+Tive facilidade em pegar o valor do INPUT e da div
+Consegui graças a esse documento a converter "STRING" em "NÚMERO"
+Tive facilidade em construir todo o IF e mostrar na tela com res.innerHTML
+
+
+DIFICULDADES:
+
+Não estava conseguindo fazer aparecer no console o valor que tinha dentro da variável("p") pois estava usando (.value no console.log):
+(Só usar .value quando é "STRING")
+(Se a VARIÁVEL estiver armazenando um NÚMERO não precisa de (.value no console.log))
+
+
+
+function verificar() {
+
+let p = window.document.getElementById('txtp')       		      \* Serve para pegar o valor do INPUT pelo ID */
+let a = window.document.querySelector('input#txta')      	      \* Serve para pegar o valor do INPUT pelo ID */
+let res = window.document.querySelector('div#res')        	      \* Serve para pegar o valor do INPUT pelo ID */
+
+            let peso = Number(p.value)                                /* Serve para transformar a variável em NÚMERO */
+let altura = Number(a.value)                               	      /* Serve para transformar a variável em NÚMERO */
+
+            let imc = peso / (altura \*\* 2)                          /* Serve para fazer a conta e armazenar o VALOR */
+
+            // console.log(peso.value); 			      /* Quando for número e quiser ver o que está dentro da VARIÁVEL não precisa de (.value) */
+            res.innerHTML = `<p>Seu IMC é de: ${imc.toFixed(2)}</p>`
+
+            if (imc < 18.5) {
+res.innerHTML += 'Abaixo do peso. Bora comer!!'
+            } else if (imc < 24.9) {
+
+                res.innerHTML += 'Peso normal. Mas vamos treinar!!'
+
+            } else if (imc < 29.9) {
+
+                res.innerHTML += 'Sobrepeso. Opa, focar mais no projetinho!!'
+
+            } else {
+                res.innerHTML += 'Obesidade. ATENÇÃO, treino e dieta agora!!'
+           }
+       }
+
+-----------------------------------------------------------------------------------------------------------------------//
+EX: CALCULO DE DANO:
+
+let atacante = window.prompt('Insira o nome do atacante:')                                  // Guarda na VARIÁVEL o valor digitado pelo usuário
+let ataque = window.parseFloat(prompt('Insira quantos pontos tem o poder de ataque:'))      // Guarda na VARIÁVEL o NÚMERO digitado pelo usuário 
+
+let defensor = window.prompt('Insira o nome do defensor:')                                  // Guarda na VARIÁVEL o valor digitado pelo usuário
+let vida = window.parseFloat(prompt('Insira os pontos de vida do defensor:'))               // Guarda na VARIÁVEL o NÚMERO digitado pelo usúario
+let defesa = window.parseFloat(prompt('Insira os pontos de defesa'))                        // Guarda na VARIÁVEL o NÚMERO digitado pelo usúario
+let escudo = window.prompt('Ele possui escudo?')                                            // Guarda na VARIÁVEL o valor digitado pelo usúario
+let dano = ataque - defesa                                                                  // Guarda na VARIÁVEL a SUBTRAÇÃO das VARIÁVEIS
+
+     if (ataque > defesa && escudo === 'nao') {         				 // precisa que os 2 serem VERDADE para imprimir (Basta apenas 1 ser FALSE para não mostrar)
+            let pontosDeVida = vida - dano                 				 // Guarda na VARIÁVEL a SUBTRAÇÃO das VARIÁVEIS
+
+            window.alert(`O dano causado foi de: ${dano}`)
+            window.alert(`O defensor ${defensor} sofreu ${dano} de dano e ficou com ${pontosDeVida} pontos de vida`)
+
+        } else if (ataque > defesa && escudo === 'sim') {       			// Se ATAQUE for MENOR que DEFESA && ESCUDO for ESTRITAMENTE igual a 'sim' faça isso:
+            let divisao = dano / 2                              			// Guarda na VARIÁVEL a DIVISÃO 
+            let soma = vida - divisao                           			// Guarda na VARIÁVEL a SUBTRAÇÃO das VARIÁVEIS
+
+            window.alert(`O dano causado foi de: ${divisao}`)
+            window.alert(`O defensor ${defensor} sofreu ${divisao} de dano e ficou com ${soma} pontos de vida`)
+
+        } else if (ataque <= defesa) {                          			// SE ATAQUE for MENOR ou IGUAL(<=) que DEFESA faça isso:
+
+            window.alert(`O dano causado foi de 0`)
+            window.alert(`O defensor ${defensor} sofreu 0 de dano e ficou com ${vida} pontos de vida`)
+        }
+--------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------( COMO USAR (IF) COM INPUT RADIO: )--------------------
+
+var fsex = document.getElementsByName('radsex')     // Serve para pegar o valor do RADIO(não foi preciso selecionar qual[0, 1])
+
+// ESTRUTURA: (SE), A VARIÁVEL (fsex[0]) estiver SELECIONADA, FAÇA ISSO:
+
+if (fsex[0].checked) {
+            genero = 'Homem'
+            if (idade < 10) {
+                img.setAttribute('src', 'img/bebe.m.png')   	// 2- Serve para mostrar o caminho da IMAGEM
+            } else if (idade < 21) {
+                img.setAttribute('src', 'img/jovem.m.png') 	// 2- Serve para mostrar o caminho da IMAGEM
+
+            } else if (idade < 50) {
+                img.setAttribute('src', 'img/adulto.m.png') 	// 2- Serve para mostrar o caminho da IMAGEM
+
+            } else {
+                img.setAttribute('src', 'img/idoso.m.png') 	// 2- Serve para mostrar o caminho da IMAGEM
+
+            }
+
+---------------------------------------( COMO ADICIONAR (IMAGEM) NO HTML PELO JS )------------------------------------------
+
+var genero = ''    				    // 1- Serve para declarar uma VARIÁVEL vazia que vai receber um valor posteriormente
+var img = window.document.createElement('img')      // 2- Serve para criar o ELEMENTO (IMG) no HTML pelo JS
+res.appendChild(img)				    // 3- Serve para colocar a IMAGEM no HTML
+
+
+        // ESTRUTURA: (SE NÃO SE), A VARIÁVEL (fsex[1]) estiver SELECIONADA, FAÇA ISSO:
+
+        } else if (fsex[1].checked) {
+            genero = 'Mulher'              			 // VARIÁVEL(genero) recebe o VALOR que vai IMPRIMIR na tela
+            if (idade < 10) {
+                img.setAttribute('src', 'img/bebe.f.png')   	 // 2- Serve para mostrar o caminho da IMAGEM
+
+            } else if (idade < 21) {
+                img.setAttribute('src', 'img/jovem.f.png')  	 // 2- Serve para mostrar o caminho da IMAGEM
+
+            } else if (idade < 50) {
+                img.setAttribute('src', 'img/adulto.f.png')	 // 2- Serve para mostrar o caminho da IMAGEM
+
+            } else {
+                img.setAttribute('src', 'img/idoso.f.png')  	 // 2- Serve para mostrar o caminho da IMAGEM
+
+            }
+
+ 
+res.style.textAlign = 'center'  				// Serve para acessar o ESTILO pela ÁRVORE DOM e centrar a DIV pelo JS
+res.innerHTML = `Detectamos ${genero} com ${idade} anos.` 	// Sempre que for escrever na tela usar uma (DIV VAZIA) com (".innerHTML")
+res.appendChild(img)    					// 3- Serve para colocar a imagem no HTML
+
+
+------------------------------------( CONDIÇÃO MÚLTIPLA(SWITCH) )---------------------------------
+ESTRUTURA: switch (expressão) {				SWITCH expressão
+ 		case valor 1:				CASO a: faça uma coisa
+ 		break					CASO b: faça outra coisa E PARE
+							CASO c: faça mais outra coisa
+ 		default:				POR PADRÃO: faça algo sempre
+ 		break
+}
+
+Não esquecer do (BREAK)
+Pega o (diaSem) que retorna um NÚMERO(0/6) de acordo com esse NÚMERO ele entra dentro do (CASE 0/6) e RETORNA o VALOR que está dentro do (CASE)
+
+
+switch (diaSem (Aqui vai a condição)) {
+    case 0:
+        console.log('Sunday');
+        break;
+    case 1:
+        console.log('Monday');
+        break
+    case 2:
+        console.log('Tuesday');
+        break
+    case 3:
+        console.log('Wednesday');
+        break
+    case 4:
+        console.log('Thursday');
+        break
+    case 5:
+        console.log('Friday');
+        break
+    case 6:
+        console.log('Saturday');
+        break
+    default:
+        console.log('[ERROR] Dia inválido!');
+        break
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------//
+
+
+let resultado = prompt('Escolha uma alternativa:\n1)\n2)\n3)')
+
+let resultadoNumerico = parseFloat(resultado)
+
+switch (resultadoNumerico) {
+    case 1:
+        alert("O resultado é 'a'")
+        break;
+    case 2:
+        alert("O resultado é 'b'")
+        break
+    case 3:
+        alert("O resultado é 'c'")
+        break
+    default:
+        alert("Finalizando")
+}
+
+
+----------------------------( REPETIÇÕES (WHITE, DO WHITE e FOR) )----------------------------------
+
+
+-------------------------------------- ( DO WHITE )-----------------------------
+/* DO WHITE */
+
+var w = 1				// EXECUTA PRIMEIRO DEPOIS VERIFICA E REPETE
+do {					// ADICIONE MAIS 1 na VARIÁVEL W depois VERIFIQUE a CONDIÇÃO
+    console.log(`Passo ${w}`);
+    w++ // w = w + 1			// ADICIONA MAIS 1 na VARIÁVEL W
+} while (w <= 3)			// Se (a VARIÁVEL W) for menor ou igual a 3 ENTRA na REPETIÇÃO:
+
+
+-------------------------------------- ( WHITE )-----------------------------
+/* WHITE */
+
+var z = 1				// Enquanto a (VARIÁVEL (Z que recebe 1))
+while (z < 3) {			 	// FOR MENOR que 3
+    console.log(`Passo ${z}`);
+    z++ // z = z + 1			// ADICIONE MAIS 1 na VARIÁVEL (Z)
+}
+
+-------------------------------------------------------------------------------//
+/* WHITE */
+
+let velocidade = 80
+
+while (velocidade > 0) {
+    alert(" O carro está a " + velocidade + " km/h")
+    velocidade -= 20  
+    alert('Diminuindo 20 km/h')
+
+    if (velocidade === 40) {
+        break
+    }
+}
+
+window.alert('O carro parou!!')
+
+-------------------------------------(COMO FAZER UMA VARIÁVEL EXIBIR VARIOS VALORES)----------------------------------
+COMO CALCULAR A QUANTIDADE DENTRO DE UMA VARIÁVEL
+
+
+let nome = window.prompt('Informe seu nome:')
+let cidades = ''								// 1- Começar com uma VARIÁVEL vazia
+let quantidade = 0								// A- Começar com uma VARIÁVEL vazia
+
+let jaVisitou = window.prompt('Já visitou alguma cidade? (sim/nao)')
+
+while (jaVisitou === 'sim') {
+    let cidade = window.prompt('Informe o nome da cidade: ')			// 2- Criar uma VARIÁVEL que vai receber os varios valores do usuário
+    
+    cidades += cidade + "\n"							// 3- Concatenar(+=) com a VARIÁVEL que vai receber os valores dentro de um LAÇO de REPETIÇÃO
+    quantidade++								// B- Colocar a VARIÁVEL para receber mais um(++) dentro de um LAÇO de REPETIÇÃO
+
+    jaVisitou = window.prompt('Já visitou alguma outra? (sim/nao)')
+}
+
+window.alert(`Parabéns ${nome} você já visitou ${quantidade} cidades ${cidades}`)
+
+-------------------------------------- ( FOR )-----------------------------
+/* FOR */
+
+
+for(var c = 1; c <= 3; c++) {		// Enquanto a (VARIÁVEL (C que recebe 1)); FOR MENOR que 3; ADICIONE MAIS 1 na VARIÁVEL (C)
+    console.log(c);			// Quando a VARIÁVEL C for MAIOR que 3 PARE o PROGRAMA
+}
+
+console.log('Vai começar...');
+for(var c = 1; c <= 3; c++) {		// Enquanto a (VARIÁVEL (C que recebe 1)); FOR MENOR que 3; ADICIONE MAIS 1 na VARIÁVEL (C)
+    console.log(c);			// Quando a VARIÁVEL C for MAIOR que 3 PARE o PROGRAMA
+}
+console.log('FIM!');
+
+----------------------------------------( VARIAVEIS )---------------------------------------------
+
+// Decrarei a variavel(nome)
+// .prompt('Serve para fazer uma pergunta ao usúario')
+// A "STRING" vai ficar dentro da 'VARIAVEL' 'NOME'
+
+var nome = window.prompt('Qual seu nome?') 			// Vai guardar na VARIAVEL NOME o que o usúario digitou
+
+window.alert('É um grande prazer em te conhecer ' + nome) 	// E vai imprimir na tela
+
+// .alert('Serve para mostrar um texto ao usúario')
+// (+) mais serve como CONCATENAÇÃO
+// VARIAVEL nunca pode ficar dentro das ASPAS(somente nas crases)
+
+-------------------------------( VARIAVEIS COMPOSTAS (ARRAYS))-----------------------------------------
+ESTRUTURA: let num = [5, 8, 4]
+
+Um ARRAY é uma VARIÁVEL que tem vários ELEMENTOS, cada ELEMENTO é composto pelo seu VALOR e uma CHAVE de IDENTIFICAÇÃO
+
+ARRAY/VETOR = é igual a TUDO COMO UM TODO igual a uma caixa
+ELEMENTO = É um par que agrupa o espaço da memoria o valor colocado dentro dele e o ÍNDICE
+ÍNDICE/CHAVE = Índice é a CASA que o CONTEÚDO está. Para buscar o CONTEÚDO 5 preciso chamar a casa 2 (0, 1, 2, 3). [PRIMEIRO ÍNDICE SEMPRE É 0]
+CONTEÚDO/VALOR = Conteúdo é o valor colocado dentro do ARRAY (5, 8, 4)
+
+
+Como adicionar CONTEÚDO no ARRAY sem perder os que já estão nele: (num.push(7)) == ("num = [5, 8, 4, 6, 7]")
+Como descobrir o COMPRIMENTO de um ARRAY: (num.length) == 5 elementos
+Como ORGANIZAR em ordem crescente o ARRAY: (num.sort()) == ("num = [4, 5, 6, 7, 8]")
+
+let num = [5, 8, 2, 9, 3]
+
+num.push(1)
+num.sort()
+console.log(num);
+
+console.log(`O vetor tem ${num.length} posições`);
+console.log(`O primeiro valor do vetor é ${num\\\\\\\[0]}`);
+let pos = num.indexOf(4)
+if (pos == -1) {
+    console.log('O valor não foi encontrado!');
+} else {
+    console.log(`O valor está na posição ${pos}`);
+}
+
+-------------------------------------------------------------------//
+
+let valores = [8, 1, 7, 4, 2, 9]
+valores.sort()
+
+// for(let pos = 0; pos < valores.length; pos++) {
+//     console.log(`A posição ${pos} tem o valor ${valores\\\\\\\[pos]}`);
+// }
+
+for (let pos in valores) {
+    console.log(`A posição ${pos} tem o valor ${valores\\\\\\\[pos]}`);
+ 
+}
+
+----------------------------------------(COMO CONVERTER STRING EM NÚMERO)---------------------------------------------
+Estrutura de como CONVERTER string em número: (Só transformar a variável em número com (NUMBER))
+
+let ini = window.document.getElementById('txti')
+let fim = window.document.getElementById('txtf')
+let pas = window.document.getElementById('txtp')
+ 
+let i = Number(ini.value)
+let f = Number(fim.value)
+let p = Number(pas.value)
+ 																 /* Forma simplificada */
+var n1 = Number(window.prompt('Digite um número: '))   			5 + 2 = 7 	/* Mais */				 n = n + 4   n += 4   n++
+var n2 = Number(window.prompt('Digite outro número: '))			5 - 2 = 3	/* Menos */				 n = n - 5   n -= 5   n--
+var s = n1 + n2								5 * 2 = 10	/* Vezes */				 n = n * 4   n *= 4
+s = window.alert(`A soma entre ${n1} e ${n2} é igual a ${s}`)		5 / 2 = 2.5	/* Divisão */				 n = n / 2   n /= 2
+ 									5 % 2 = 1	/* Resto de divisão */			 n = n ** 2  n **= 2
+// (string(s) Serve para transformar um NUMBER em STRING)		5 ** 2 = 25	/* potencia (elevado ao quadrado) */	 n = n % 5   n %= 5
+// (número + número) para SOMAR 1 + 1 = 2
+// (string + string) para concatenação (juntar string + variável)
+
+--------------------------------------------(COMO ESCREVER NO HTML PELO JS)-----------------------------------------
+var nome = window.prompt('Qual é seu nome?')
+        (.prompt) Serve para perguntar ao usúario e guardar dentro da VARIAVEL(nome)
+
+        document.write(`Olá, ${nome}! Seu nome tem ${nome.length} letras. <br/>`)
+
+        // (.write) Serve para escrever no HTML
+        // (.length) Serve para somar quantas letras tem dentro da VARIAVEL
+
+        document.write(`Seu nome em maiúsculas é ${nome.toUpperCase()}<br/>`)
+
+        // (.write) Serve para escrever no HTML
+        // (.toUpeerCase() ) Serve para colocar TODAS as letras em MAIÚSCULAS
+
+        document.write(`Seu nome em minúsculas é ${nome.toLowerCase()}`)
+
+        // (.write) Serve para escrever no HTML
+        // (.toLowerCase() ) Serve para colocar TODAS as letras em MINÚSCULAS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------( Menu hamburguer )----------------------------------------
+ESTRUTURA PARA CRIAR MENU HAMBURGUER:
+
+1.	(Pegar ICON do GOOGLE),
+2.	
+3.	(Deixar a lista oculta (DISPLAY: NONE))
+4.	
+5.	(Definir um "ID" no ICON e no NAVBAR),
+6.	
+7.	(Criar a função no HTML(>>QUE SERÁ EXECUTADA QUANDO O USUÁRIO CLICAR<<) {ONCLICK="QualquerNome()" }),
+8.	
+9.	(No JS CHAMAR função(qualquerNome() )),
+10.	
+11.	(Dentro da função: chamar o "ID" da LISTA), depois (chamar o CSS pelo JS (.STYLE)), depois (chamar o ELEMENTO que quer modificar(.DISPLAY), depois (colocar a PRIPRIEDADE para que gostaria de modifica('NONE')))
+
+function clickMenu() {
+
+      if (itens.style.display == 'none') {
+          itens.style.display = 'block'
+      } else {
+          itens.style.display = 'none'
+
+
+
+/*
+.ITENS(O que são 'ITENS?' é o "ID" da LISTA("LI")
+
+.STYLE(O que é '.STYLE' TAG do CSS dentro do JS, aqui você chama o CSS para dentro do JS)
+
+.DISPLAY(O que é '.DISPLAY' ELEMENTO que quer modificar) recebe '=='
+
+'BLOCK'(O que é 'BLOCK' ATRIBUTO do CSS "faz com que ocupe toda a LARGURA disponível")
+
+*/
+
+(SE FOR VERDADE QUE itens.style.display É IGUAL A 'NONE': FAÇA ISSO:
+transforme ele em 'BLOCK' (ABRIU O MENU) SE NÃO:
+
+SE FOR VERDADE QUE itens.style.display é igual a 'BLOCK' FAÇA ISSO:
+transforme ele em 'NONE' (FECHOU O MENU)
+
+
+-----------------PARA ABRIR O MENU------------------------
+Então no CSS (ITENS: está como 'BLOCK'), dispara a função ao clicar o JS vai verificar se itens é 'NONE'(OCULTO) se for VERDADE ele TRANSFORMA em 'BLOCK'(ABRIU O MENU)
+
+--------------PARA FECHAR O MENU--------------------------
+Então no CSS (ITENS: agora esta como 'BLOCK' modificado pelo JS), dispara a função ao clicar o JS vai verificar se ITENS é 'NONE'(OCULTO) NOVAMENTE como agora é FALSO ele TRANSFORMA em 'NONE'(OCULTO) NOVAMENTE sendo assim FECHANDO O MENU
+
+)
+
+function clickMenu() {
+
+      if (itens.style.display == 'none') {
+          itens.style.display = 'block'
+      } else {
+          itens.style.display = 'none'
+
+
+
+
+
+
+
+
+Eu juro por tudo que vou passar o próximo natal trabalhando com progração!(29/11/25)
+
+https://youtube.com/shorts/54FcEF0Wzks?si=YjNDbYzCeLaW4PNC bolo de cenoura
+
+2 🥄 de açúcar
+2 🥄 de oleo
+2 🥄de chocolate
+4🥄 de farinha
+4 🥄cheia de leite
+Meia 🥄 de chá de fermento

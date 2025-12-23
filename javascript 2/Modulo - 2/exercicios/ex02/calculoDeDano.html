@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Dano</title>
+</head>
+
+<body>
+    <h1>Cálculo de Dano</h1>
+
+    <script>
+        let atacante = window.prompt('Insira o nome do atacante:')                                  // Guarda na VARIÁVEL o valor digitado pelo usuário
+        let ataque = window.parseFloat(prompt('Insira quantos pontos tem o poder de ataque:'))      // Guarda na VARIÁVEL o NÚMERO digitado pelo usuário 
+
+        let defensor = window.prompt('Insira o nome do defensor:')                                  // Guarda na VARIÁVEL o valor digitado pelo usuário
+        let vida = window.parseFloat(prompt('Insira os pontos de vida do defensor:'))               // Guarda na VARIÁVEL o NÚMERO digitado pelo usúario
+        let defesa = window.parseFloat(prompt('Insira os pontos de defesa'))                        // Guarda na VARIÁVEL o NÚMERO digitado pelo usúario
+        let escudo = window.prompt('Ele possui escudo?')                                            // Guarda na VARIÁVEL o valor digitado pelo usúario
+        
+        let dano = ataque - defesa                                                                  // Guarda na VARIÁVEL a SUBTRAÇÃO das VARIÁVEIS
+
+
+        if (ataque > defesa && escudo === 'nao') {          // precisa que os 2 serem VERDADE para imprimir (Basta apenas 1 ser FALSE para não mostrar)
+            let pontosDeVida = vida - dano                  // Guarda na VARIÁVEL a SUBTRAÇÃO das VARIÁVEIS
+
+            window.alert(`O dano causado foi de: ${dano}`)
+            window.alert(`O defensor ${defensor} sofreu ${dano} de dano e ficou com ${pontosDeVida} pontos de vida`)
+
+        } else if (ataque > defesa && escudo === 'sim') {       // Se ATAQUE for MENOR que DEFESA && ESCUDO for ESTRITAMENTE igual a 'sim' faça isso:
+            let divisao = dano / 2                              // Guarda na VARIÁVEL a DIVISÃO 
+            let soma = vida - divisao                           // Guarda na VARIÁVEL a SUBTRAÇÃO das VARIÁVEIS
+
+            window.alert(`O dano causado foi de: ${divisao}`)
+            window.alert(`O defensor ${defensor} sofreu ${divisao} de dano e ficou com ${soma} pontos de vida`)
+
+        } else if (ataque <= defesa) {                          // SE ATAQUE for MENOR ou IGUAL(<=) que DEFESA faça isso:
+
+            window.alert(`O dano causado foi de 0`)
+            window.alert(`O defensor ${defensor} sofreu 0 de dano e ficou com ${vida} pontos de vida`)
+        }
+
+    </script>
+</body>
+
+</html>

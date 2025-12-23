@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Velocidade</title>
+</head>
+<body>
+    <h1>Teste de Velocidade</h1>
+
+    <script>
+        let nome = window.prompt('Informe seu nome:')
+        let vel1 = window.parseFloat(prompt('Informe a velocidade do carro 1:'))
+        let vel2 = window.parseFloat(prompt('Informe a velocidade do carro 2:'))
+
+
+        if (vel1 > vel2) {
+            window.alert(`O carro 1 está a ${vel1}KM//H e é o mais rápido`)
+
+        } else if (vel2 > vel1) {
+            window.alert(`O carro 2 está a ${vel2}KM/H e é o mais rápido`)
+
+        } else {
+            window.alert(`${vel1} e ${vel2} possuem velocidades iguais.`)
+        }
+    </script>
+</body>
+</html>
