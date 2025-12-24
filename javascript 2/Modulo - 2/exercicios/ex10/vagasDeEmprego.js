@@ -1,41 +1,73 @@
-let vaga = []
+let vagas = []
 let objeto = {}
 
-function listarVagas() {
-    let mensagem = '\n'
-    vaga.forEach(function (elemento, indice) {
-        mensagem += `${indice + 1}: ${elemento.nomeVaga} \n`
+function listarVagas() {                                            // Cria a FUNÇÃO (listarVagas)
+    let mensagem = '\n'                                             // Cria a VARIÁVEL que vai receber o RESULTADO
+    vagas.forEach(function (elemento, indice) {                     // Percorre todo o elemento (não precisa usar o for)
+        mensagem += `${indice + 1}: ${elemento.nomeVaga} \n`        // Sempre que o RESULTADO estiver dentro de uma repetição usar (+=)
     })
-    return mensagem
+    return mensagem     // Sempre que for exibir uma mensagem de uma FUNÇÃO usar o (RETURN)
 }
 
 function criarNovaVaga() {
-    let nomeVaga = prompt('Informe o nome da vaga:')
-    let descricao = prompt('Informe uma breve descricão da vaga:')
-    let dataLimite = prompt('Informe a data limite:')
-    let candidatos = prompt('Informe os candidatos:')
+    const vaga = {}
+
+    vaga.nomeVaga = prompt('Informe o nome da vaga:')
+    vaga.descricao = prompt('Informe uma breve descricão da vaga:')
+    vaga.dataLimite = prompt('Informe a data limite:')
+    vaga.nomeCandidatos = []
+    vaga.numeroCandidatos = vagas.length + 1
+
 
     let confirmar = confirm('Deseja confirmar?')
 
     if (confirmar) {
-        vaga.push({
-            nomeVaga, 
-            descricao, 
-            dataLimite, 
-            candidatos
-        })
+        vagas.push(vaga)
     }
-    console.log(vaga);
+    console.log(vagas);
     return
 }
 
 function visualizarVaga() {
-    vaga.forEach(function (elemento, indice) {
-        mensagem += `${indice + 1} ${elemento.nomeVaga}\n ${elemento.descricao}\n ${elemento.dataLimite}\n ${elemento.candidatos} `
+    let msg = ''
+    let numeroVaga = prompt(`Informe qual vaga gostaria de visualizar:\n ${listarVagas()}`)
+    numeroVaga = Number(numeroVaga) - 1   // Converte para número e ajusta o índice
+
+    // const vagaEscolhida = vagas[numeroVaga]
+
+    const vagaEscolhida = vagas.find(function (elemento, indice) {
+        return indice === numeroVaga
     })
-    console.log(mensagem);
-    return mensagem
+
+    msg = `NOME: ${vagaEscolhida.nomeVaga}`
+
+    return msg
+}
+
+function inscreverCandidado() {
+    let nome = prompt('Informe o nome do candidato:')
+    let indice = prompt(`Informe qual vaga gostaria de inscrever o candidato:\n ${listarVagas()}`)
+    indice = Number(indice) - 1
+
+    let confirmacao = confirm(`
+        Nome do candidato: ${nome}\n
+        Deseja confirmar?
+        `)
+
+    if (confirmacao) {
+        vagas[indice].nomeCandidatos.push({ nome })
+    }
+}
+
+function excluirVaga() {
+    let indice = prompt("Informe qual vaga gostaria de remover")
+    indice = Number(indice) - 1
+
+    const elementoRemovido = vagas.splice(indice, 1) 
+    let mensagem = `A vaga ${elementoRemovido[0].nomeVaga} foi removida!`
     
+    
+    return mensagem
 }
 
 
@@ -61,10 +93,10 @@ function executar() {
                 resultado = visualizarVaga()
                 break
             case '4':
-                alert('opcao quatro')
+                resultado = inscreverCandidado()
                 break
             case '5':
-                alert('opcao cinco')
+                resultado = excluirVaga()
                 break
             case '6':
                 alert('Saindo...')
@@ -77,6 +109,6 @@ function executar() {
             alert(`Resultado: ${resultado}`)
         }
     } while (opcao !== '6')
-} 
+}
 
 executar()

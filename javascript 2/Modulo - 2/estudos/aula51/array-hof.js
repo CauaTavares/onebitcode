@@ -36,7 +36,7 @@ const orcs = personagens.filter(function (personagem) {    // Maneira mais SIMPL
     return personagem.raca === "Orc"
 })
 
-console.log(orcs);
+// console.log(orcs);
 
 
 // Reduce
@@ -45,7 +45,7 @@ const nivelTotal = personagens.reduce(function (valorAcumulado, personagem){
     return valorAcumulado + personagem.nivel
 }, 0)
 
-console.log(nivelTotal);
+// console.log(nivelTotal);
 
 const racas = personagens.reduce(function (valorAcumulado, personagem) {
     if (valorAcumulado[personagem.raca]) {
@@ -57,7 +57,7 @@ const racas = personagens.reduce(function (valorAcumulado, personagem) {
     return valorAcumulado
 }, {})
 
-console.log(racas);
+// console.log(racas);
 
 // Sort 
 
@@ -67,7 +67,7 @@ const personagensOrdenados = personagens.slice().sort(function (a, b) {
     return b.nivel - a.nivel    // Organiza em nivel descrescente
 })
  
-console.log(personagens);
-console.log(personagensOrdenados);
+// console.log(personagens);
+// console.log(personagensOrdenados);
 
 
