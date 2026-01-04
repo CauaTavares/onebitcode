@@ -46,6 +46,6 @@ function removeContact() {
   const titles = document.getElementsByTagName('h3')                    // Serve para a VARIÁVEL pegar TODOS os h3
   const contacts = document.getElementsByTagName('ul')                  // Serve para a VARIÁVEL pegar os ul
 
-  contactSection.removeChild(titles[titles.length - 1])                 // Serve para remover os ELEMENTOS. Qual elemento? (title na posicao [comprimento - 1])
-  contactSection.removeChild(contacts[contacts.length - 1])             // Serve para remover os ELEMENTOS. Qual elemento? (title na posicao [comprimento - 1])
+  contactSection.removeChild(titles[titles.length - 1])                 // Serve para remover os ELEMENTOS. Qual elemento? (title na posição [comprimento - 1])
+  contactSection.removeChild(contacts[contacts.length - 1])             // Serve para remover os ELEMENTOS. Qual elemento? (title na posição [comprimento - 1])
 }

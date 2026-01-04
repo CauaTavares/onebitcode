@@ -22,13 +22,13 @@ function register(ev) {
 const button = document.getElementById('register-button')   // Serve para pegar o BOTÃO pelo (ID)
 
 button.addEventListener('click', register)  // Passar a função sem () para NÃO pegar os resultados
-// Serve para adicionar no botão uma funcionalidade no botão para ele ficar esperando esses EVENTOS acontecerem 
+// Serve para adicionar uma funcionalidade no botão para ele ficar esperando esses EVENTOS acontecerem 
 
 //--------------------------------------------------------REMOVER EVENTO
 
 function removeListener() {
     button.removeEventListener('click', register)   // VARIÁVEL e informar qual evento quer remover
-    alert('Event removed')
+    alert('Evento removido!')
 }
 
 //----------------------------------------------------------ADICIONAR EVENTO
